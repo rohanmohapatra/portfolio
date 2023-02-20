@@ -13,6 +13,7 @@ module.exports = {
   favicon: 'images/avataaars.png',
   organizationName: 'rohanmohapatra', // Usually your GitHub org/user name.
   projectName: 'rohanmohapatra.github.io', // Usually your repo name.
+  deploymentBranch: 'master',
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
