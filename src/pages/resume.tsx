@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import { Box, ChakraProvider, Heading, Stack } from '@chakra-ui/react';
-import { theme } from './Theme';
+import { theme } from '../components/Theme';
 import Iframe from 'react-iframe';
 
 const Resume = () => {
