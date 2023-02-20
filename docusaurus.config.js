@@ -27,9 +27,9 @@ module.exports = {
       // },
       items: [
         { to: '#about', label: 'About', position: 'right' },
+        { to: '#projects', label: 'Projects', position: 'right' },
         { to: '#publications', label: 'Publications', position: 'right' },
         { to: '#s', label: 'Skills', position: 'right' },
-        { to: '#projects', label: 'Projects', position: 'right' },
         { to: '/resume', label: 'Résumé', position: 'right' },
         { to: '/blog', label: 'Blog', position: 'right' },
         { type: 'doc', docId: '1234', label: 'Contact Me', position: 'right' },
