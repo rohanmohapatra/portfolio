@@ -1,4 +1,4 @@
 export const imagePath = '/images';
 export const githubUsername = 'rohanmohapatra';
 export const githubToken =
-  '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';
+  'Z2l0aHViX3BhdF8xMUFIU0pBTlkwWGpIS3Vjd3R4U0dWX2VaN0ZmcUVLOHNjR0RadHVCa2lOcXlYYmhLYzVpdnl3RVpoU2w3aXBaOGlOWk4zNTdPU2FOZmpXMms0';

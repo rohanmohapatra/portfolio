@@ -66,7 +66,7 @@ export const Projects: React.FC<BoxProps> = (props) => {
     axios
       .get(url, {
         headers: {
-          Authorization: `Bearer ${githubToken}`,
+          Authorization: `Bearer ${atob(githubToken)}`,
           Accept: 'application/vnd.github+json',
         },
       })
