@@ -13,6 +13,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { FaDownload } from 'react-icons/fa';
+import { openUrl } from '../../utils/helpers';
 
 export const AboutMe: React.FC<BoxProps> = (props) => {
   return (
@@ -49,10 +50,11 @@ export const AboutMe: React.FC<BoxProps> = (props) => {
           <Button
             maxW="md"
             bg="red.500"
-            mt={{ base: '', md: '6rem !important' }}
+            mt={{ base: '', md: '4rem !important' }}
             rightIcon={<Icon as={FaDownload} />}
+            onClick={() => openUrl('/resume')}
           >
-            Download CV
+            View Résumé
           </Button>
         </Stack>
       </Stack>

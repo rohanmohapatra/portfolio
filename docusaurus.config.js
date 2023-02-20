@@ -3,16 +3,23 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Rohan Mohapatra',
+  title: 'Code. Sleep. Eat. Repeat',
   tagline: 'Software Developer',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://rohanmohapatra.github.com',
   baseUrl: '/',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'images/avataaars.png',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'rohanmohapatra', // Usually your GitHub org/user name.
+  projectName: 'rohanmohapatra.github.io', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
       title: 'Rohan',
       // logo: {
@@ -24,6 +31,7 @@ module.exports = {
         { to: '#publications', label: 'Publications', position: 'right' },
         { to: '#s', label: 'Skills', position: 'right' },
         { to: '#projects', label: 'Projects', position: 'right' },
+        { to: '/resume', label: 'Résumé', position: 'right' },
         { to: '/blog', label: 'Blog', position: 'right' },
         { type: 'doc', docId: '1234', label: 'Contact Me', position: 'right' },
         // {

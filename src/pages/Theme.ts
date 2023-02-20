@@ -21,6 +21,7 @@ const overrides: ThemeOverride = {
       },
     },
     Button: {
+      baseStyle: { _focus: { boxShadow: 'none' } },
       variants: {
         solid: {
           bg: 'red.500',

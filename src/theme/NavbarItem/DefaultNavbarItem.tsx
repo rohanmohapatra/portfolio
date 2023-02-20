@@ -18,6 +18,7 @@ import type {
 } from '@theme/NavbarItem/DefaultNavbarItem';
 import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
+import ScrollIntoView from 'react-scroll-into-view';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
@@ -33,7 +34,7 @@ function NavLink({
 }: NavLinkProps) {
   // TODO all this seems hacky
   // {to: 'version'} should probably be forbidden, in favor of {to: '/version'}
-  const toUrl = useBaseUrl(to);
+  let toUrl = useBaseUrl(to);
   const activeBaseUrl = useBaseUrl(activeBasePath);
   const normalizedHref = useBaseUrl(href, { forcePrependBaseUrl: true });
   const isExternalLink = label && href && !isInternalUrl(href);

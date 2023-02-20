@@ -7,8 +7,9 @@ import {
   Button,
   Icon,
   BoxProps,
+  HStack,
 } from '@chakra-ui/react';
-import { FaRocket } from 'react-icons/fa';
+import { FaRocket, FaUserAstronaut } from 'react-icons/fa';
 import ScrollIntoView from 'react-scroll-into-view';
 
 export const Intro: React.FC<BoxProps> = (props) => {
@@ -22,24 +23,33 @@ export const Intro: React.FC<BoxProps> = (props) => {
       pl={{ base: '1rem', md: '0rem' }}
       {...props}
     >
-      <Stack spacing="1rem" h={{ base: '20rem', md: '50rem' }} justify="center">
-        <Heading>Hi, I am Rohan</Heading>
-        <Heading fontSize="2xl" color="gray.500">
-          Software Developer
+      <Stack h={{ base: '20rem', md: '50rem' }} justify="center">
+        <Heading>Hi, I am Rohan!</Heading>
+        <Heading fontSize="2xl" color="red.500" pt="2rem">
+          A Software Developer.
         </Heading>
-        <Text color="gray.500">
+        <Heading fontSize="lg" color="gray.800">
+          Building software for humans
+        </Heading>
+        <Text color="gray.500" pt="2rem">
           Algorithms • Machine learning • Microservices • React JS
         </Text>
-        <ScrollIntoView selector="#projects">
-          <Button
-            maxW="md"
-            bg="red.500"
-            mt="6rem !important"
-            rightIcon={<Icon as={FaRocket} />}
-          >
-            Projects
-          </Button>
-        </ScrollIntoView>
+        <HStack mt="4rem !important">
+          <ScrollIntoView selector="#about">
+            <Button
+              maxW="md"
+              bg="red.500"
+              rightIcon={<Icon as={FaUserAstronaut} />}
+            >
+              About me
+            </Button>
+          </ScrollIntoView>
+          <ScrollIntoView selector="#projects">
+            <Button maxW="md" bg="red.500" rightIcon={<Icon as={FaRocket} />}>
+              Projects
+            </Button>
+          </ScrollIntoView>
+        </HStack>
       </Stack>
       <Image src="/images/profile.svg" h={{ base: '20rem', md: '30rem' }} />
     </Stack>

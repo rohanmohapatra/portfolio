@@ -1,6 +1,7 @@
 import {
   Button,
   ChakraProvider,
+  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -15,7 +16,10 @@ import React from 'react';
 export const ContactMe: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const location = useLocation();
-  if (location.pathname.includes('blog')) {
+  if (
+    location.pathname.includes('blog') ||
+    location.pathname.includes('resume')
+  ) {
     return null;
   }
   return (
@@ -26,9 +30,11 @@ export const ContactMe: React.FC = () => {
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Contact Me at</ModalHeader>
+          <ModalHeader>Want to connect?</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>Hello World</ModalBody>
+          <ModalBody>
+            Email me at <Link color="red.500">rohannmohapatra@gmail.com</Link>
+          </ModalBody>
 
           <ModalFooter>
             <Button colorScheme="red" mr={3} onClick={onClose}>
