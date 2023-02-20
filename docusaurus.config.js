@@ -15,6 +15,7 @@ module.exports = {
   projectName: 'rohanmohapatra.github.io', // Usually your repo name.
   deploymentBranch: 'master',
   themeConfig: {
+    metadata: [{ name: 'keywords', content: 'portfolio, blog' }],
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
