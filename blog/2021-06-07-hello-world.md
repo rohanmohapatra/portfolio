@@ -6,12 +6,8 @@ author_image_url: /images/avataaars.png
 tags: [hello-world]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
-Welcome to this blog. This blog is created with [**Docusaurus 2**](https://docusaurus.io/).
+Hello World! I have just deployed my portfolio and I will be adding more blog content in this space.
 
 <!--truncate-->
 
-This is a test post.
-
-A whole bunch of other information.
+This blog is created with [**Docusaurus 2**](https://docusaurus.io/).

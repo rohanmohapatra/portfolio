@@ -7,6 +7,22 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { useEffect } from 'react';
 
 const overrides: ThemeOverride = {
+  styles: {
+    global: (props) => ({
+      'html, body': {
+        background: props.colorMode === 'light' ? 'white' : 'gray.1000',
+      },
+      a: {
+        color: 'red.500',
+        textDecoration: 'none',
+        transition:
+          'color var(--ifm-transition-fast) var(--ifm-transition-timing-default);',
+      },
+      svg: {
+        display: 'inline',
+      },
+    }),
+  },
   fonts: {
     heading: `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
     body: `Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
@@ -17,6 +33,9 @@ const overrides: ThemeOverride = {
       '500': '#FF4F5B',
       '600': '#FF3643',
       '700': '#FF0214',
+    },
+    gray: {
+      '1000': '#0F0F0F',
     },
   },
   components: {
@@ -78,7 +97,7 @@ const overrides: ThemeOverride = {
 };
 
 export const useBackgroundImage = () => {
-  const { colorMode } = useColorMode();
+  const { colorMode } = useChakraColorMode();
 
   if (colorMode == 'dark') {
     // Onyx Black #0f0f0f
@@ -86,15 +105,6 @@ export const useBackgroundImage = () => {
   } else {
     return "linear-gradient(to bottom, rgba(255, 255, 255, 1) 30%,rgba(255, 255, 255, 0.9) 100%), url('/images/background.jpg');";
   }
-};
-
-export const useAutomaticColorMode = () => {
-  const { colorMode } = useColorMode();
-  const { setColorMode } = useChakraColorMode();
-
-  useEffect(() => {
-    setColorMode(colorMode);
-  }, [colorMode]);
 };
 
 export const theme = extendTheme(overrides);

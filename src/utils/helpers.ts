@@ -1,1 +1,1 @@
-export const openUrl = (url: string) => window.open(url, "_blank")?.focus();
+export const openUrl = (url: string) => window.open(url, '_blank')?.focus();

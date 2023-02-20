@@ -30,10 +30,10 @@ export const Intro: React.FC<BoxProps> = (props) => {
       <Stack h={{ base: '20rem', md: '50rem' }} justify="center">
         <Heading>Hi, I am Rohan!</Heading>
         <Heading fontSize="2xl" color="red.500" pt="2rem">
-          A Software Developer.
+          A Software Developer
         </Heading>
         <Heading fontSize="lg" color={heading}>
-          Building software for humans
+          building software for humans
         </Heading>
         <Text color={text} pt="2rem">
           Algorithms • Machine learning • Microservices • React JS

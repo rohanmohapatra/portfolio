@@ -1,6 +1,5 @@
 import {
   Button,
-  ChakraProvider,
   Link as ChakraLink,
   Modal,
   ModalBody,
@@ -9,23 +8,19 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import { useLocation } from '@docusaurus/router';
 import React from 'react';
-import { theme } from '../Theme';
 
 export const ContactMe: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const location = useLocation();
-  if (
-    location.pathname.includes('blog') ||
-    location.pathname.includes('resume')
-  ) {
-    return null;
-  }
+  // const location = useLocation();
+  // if (location.pathname.includes('blog')) {
+  //   return null;
+  // }
   return (
-    <ChakraProvider theme={theme}>
+    <>
       <ChakraLink
         className="navbar__item navbar__link"
         onClick={onOpen}
@@ -36,11 +31,11 @@ export const ContactMe: React.FC = () => {
       </ChakraLink>
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent bgColor={useColorModeValue('white', '#0F0F0F')}>
           <ModalHeader>Want to connect?</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            Email me at{' '}
+            Email me at
             <ChakraLink color="red.500">rohannmohapatra@gmail.com</ChakraLink>
           </ModalBody>
 
@@ -51,6 +46,6 @@ export const ContactMe: React.FC = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </ChakraProvider>
+    </>
   );
 };

@@ -2,11 +2,10 @@ import React from 'react';
 import { Stack, HStack } from '@chakra-ui/react';
 import { IconBar } from './layout/IconBar';
 import { Portfolio } from './portfolio/Portfolio';
-import { useBackgroundImage, useAutomaticColorMode } from './Theme';
+import { useBackgroundImage } from './Theme';
 
 export const Layout: React.FC = () => {
   const backgroundImage = useBackgroundImage();
-  useAutomaticColorMode();
 
   return (
     <Stack
