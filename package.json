@@ -14,7 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.6.5",
+    "@chakra-ui/react": "^1.8.8",
     "@docusaurus/core": "^2.3.1",
     "@docusaurus/preset-classic": "^2.3.1",
     "@docusaurus/theme-common": "^2.3.1",
