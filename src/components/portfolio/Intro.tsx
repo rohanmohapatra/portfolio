@@ -8,11 +8,15 @@ import {
   Icon,
   BoxProps,
   HStack,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { FaRocket, FaUserAstronaut } from 'react-icons/fa';
 import ScrollIntoView from 'react-scroll-into-view';
 
 export const Intro: React.FC<BoxProps> = (props) => {
+  const heading = useColorModeValue('gray.800', 'gray.200');
+  const text = useColorModeValue('gray.500', 'gray.300');
+
   return (
     <Stack
       direction={{ base: 'column-reverse', md: 'row' }}
@@ -28,10 +32,10 @@ export const Intro: React.FC<BoxProps> = (props) => {
         <Heading fontSize="2xl" color="red.500" pt="2rem">
           A Software Developer.
         </Heading>
-        <Heading fontSize="lg" color="gray.800">
+        <Heading fontSize="lg" color={heading}>
           Building software for humans
         </Heading>
-        <Text color="gray.500" pt="2rem">
+        <Text color={text} pt="2rem">
           Algorithms • Machine learning • Microservices • React JS
         </Text>
         <HStack mt="4rem !important">

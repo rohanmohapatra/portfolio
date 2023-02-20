@@ -1,4 +1,10 @@
-import { extendTheme, ThemeOverride } from '@chakra-ui/react';
+import {
+  extendTheme,
+  ThemeOverride,
+  useColorMode as useChakraColorMode,
+} from '@chakra-ui/react';
+import { useColorMode } from '@docusaurus/theme-common';
+import { useEffect } from 'react';
 
 const overrides: ThemeOverride = {
   fonts: {
@@ -69,6 +75,26 @@ const overrides: ThemeOverride = {
       },
     },
   },
+};
+
+export const useBackgroundImage = () => {
+  const { colorMode } = useColorMode();
+
+  if (colorMode == 'dark') {
+    // Onyx Black #0f0f0f
+    return "linear-gradient(to bottom, rgba(15, 15, 15, 0.98) 45%,rgba(15, 15, 15, 0.85) 100%), url('/images/background.jpg');";
+  } else {
+    return "linear-gradient(to bottom, rgba(255, 255, 255, 1) 30%,rgba(255, 255, 255, 0.9) 100%), url('/images/background.jpg');";
+  }
+};
+
+export const useAutomaticColorMode = () => {
+  const { colorMode } = useColorMode();
+  const { setColorMode } = useChakraColorMode();
+
+  useEffect(() => {
+    setColorMode(colorMode);
+  }, [colorMode]);
 };
 
 export const theme = extendTheme(overrides);

@@ -9,10 +9,12 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import { useLocation } from '@docusaurus/router';
 import React from 'react';
+import { theme } from '../Theme';
 export const ContactMe: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const location = useLocation();
@@ -23,7 +25,7 @@ export const ContactMe: React.FC = () => {
     return null;
   }
   return (
-    <>
+    <ChakraProvider theme={theme}>
       <Button variant="link" class="navbar__item navbar__link" onClick={onOpen}>
         Contact Me
       </Button>
@@ -43,6 +45,6 @@ export const ContactMe: React.FC = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
+    </ChakraProvider>
   );
 };

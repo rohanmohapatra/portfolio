@@ -11,23 +11,29 @@ import {
   StatHelpText,
   StatNumber,
   Text,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { FaDownload } from 'react-icons/fa';
 import { openUrl } from '../../utils/helpers';
 
 export const AboutMe: React.FC<BoxProps> = (props) => {
+  const text = useColorModeValue('gray.800', 'gray.100');
+  const image = useColorModeValue(
+    '/images/about-me.svg',
+    '/images/about-me-dark.svg'
+  );
   return (
     <Stack justify="center" alignItems="center" {...props}>
       <Heading fontSize="2xl">About Me</Heading>
-      <Text color="gray.800">My Introduction</Text>
+      <Text color={text}>My Introduction</Text>
       <Stack direction={{ base: 'column', md: 'row' }} pt="3rem">
-        <Image src="/images/about-me.svg" h="30rem" />
+        <Image src={image} h="30rem" />
         <Stack
           width={{ base: 'full', md: '45%' }}
           spacing={{ base: '1rem', md: '4rem' }}
           pl={{ base: '1rem', md: '4rem' }}
         >
-          <Text color="gray.800" fontSize="xl">
+          <Text color={text} fontSize="xl">
             Software developer with a thirst to understand complex problems and
             come up with innovative solutions. Experience in Machine Learning,
             worked on algorithms to optimize real-world systems. Good knowledge
