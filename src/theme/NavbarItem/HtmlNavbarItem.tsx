@@ -1,7 +1,6 @@
-import React from 'react';
+import type { Props } from '@theme/NavbarItem/HtmlNavbarItem';
 import clsx from 'clsx';
-
-import type {Props} from '@theme/NavbarItem/HtmlNavbarItem';
+import React from 'react';
 
 export default function HtmlNavbarItem({
   value,
@@ -19,7 +18,7 @@ export default function HtmlNavbarItem({
         },
         className,
       )}
-      dangerouslySetInnerHTML={{__html: value}}
+      dangerouslySetInnerHTML={{ __html: value }}
     />
   );
 }

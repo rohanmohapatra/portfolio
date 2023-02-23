@@ -1,10 +1,10 @@
-import React from 'react';
-import clsx from 'clsx';
-import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
 import type {
   DesktopOrMobileNavBarItemProps,
   Props,
 } from '@theme/NavbarItem/DefaultNavbarItem';
+import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
+import clsx from 'clsx';
+import React from 'react';
 
 function DefaultNavbarItemDesktop({
   className,
@@ -51,8 +51,8 @@ export default function DefaultNavbarItem({
     <Comp
       {...props}
       activeClassName={
-        props.activeClassName ??
-        (mobile ? 'menu__link--active' : 'navbar__link--active')
+        props.activeClassName
+        ?? (mobile ? 'menu__link--active' : 'navbar__link--active')
       }
     />
   );

@@ -1,8 +1,8 @@
-import React from 'react';
-import {useActiveDocContext} from '@docusaurus/plugin-content-docs/client';
-import {useLayoutDocsSidebar} from '@docusaurus/theme-common/internal';
+import { useActiveDocContext } from '@docusaurus/plugin-content-docs/client';
+import { useLayoutDocsSidebar } from '@docusaurus/theme-common/internal';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
-import type {Props} from '@theme/NavbarItem/DocSidebarNavbarItem';
+import type { Props } from '@theme/NavbarItem/DocSidebarNavbarItem';
+import React from 'react';
 
 export default function DocSidebarNavbarItem({
   sidebarId,
@@ -10,7 +10,7 @@ export default function DocSidebarNavbarItem({
   docsPluginId,
   ...props
 }: Props): JSX.Element {
-  const {activeDoc} = useActiveDocContext(docsPluginId);
+  const { activeDoc } = useActiveDocContext(docsPluginId);
   const sidebarLink = useLayoutDocsSidebar(sidebarId, docsPluginId).link;
   if (!sidebarLink) {
     throw new Error(

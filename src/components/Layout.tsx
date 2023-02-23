@@ -1,5 +1,6 @@
+import { HStack, Stack } from '@chakra-ui/react';
 import React from 'react';
-import { Stack, HStack } from '@chakra-ui/react';
+
 import { IconBar } from './layout/IconBar';
 import { Portfolio } from './portfolio/Portfolio';
 import { useBackgroundImage } from './Theme';

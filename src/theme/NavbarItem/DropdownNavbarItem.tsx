@@ -1,17 +1,17 @@
-import React, {useState, useRef, useEffect} from 'react';
-import clsx from 'clsx';
 import {
+  Collapsible,
   isRegexpStringMatch,
   useCollapsible,
-  Collapsible,
 } from '@docusaurus/theme-common';
-import {isSamePath, useLocalPathname} from '@docusaurus/theme-common/internal';
-import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
-import NavbarItem, {type LinkLikeNavbarItemProps} from '@theme/NavbarItem';
+import { isSamePath, useLocalPathname } from '@docusaurus/theme-common/internal';
+import NavbarItem, { type LinkLikeNavbarItemProps } from '@theme/NavbarItem';
 import type {
   DesktopOrMobileNavBarItemProps,
   Props,
 } from '@theme/NavbarItem/DropdownNavbarItem';
+import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
+import clsx from 'clsx';
+import React, { useEffect, useRef, useState } from 'react';
 
 function isItemActive(
   item: LinkLikeNavbarItemProps,
@@ -49,8 +49,8 @@ function DropdownNavbarItemDesktop({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (
-        !dropdownRef.current ||
-        dropdownRef.current.contains(event.target as Node)
+        !dropdownRef.current
+        || dropdownRef.current.contains(event.target as Node)
       ) {
         return;
       }
@@ -72,7 +72,8 @@ function DropdownNavbarItemDesktop({
       className={clsx('navbar__item', 'dropdown', 'dropdown--hoverable', {
         'dropdown--right': position === 'right',
         'dropdown--show': showDropdown,
-      })}>
+      })}
+    >
       <NavbarNavLink
         aria-haspopup="true"
         aria-expanded={showDropdown}
@@ -86,7 +87,8 @@ function DropdownNavbarItemDesktop({
             e.preventDefault();
             setShowDropdown(!showDropdown);
           }
-        }}>
+        }}
+      >
         {props.children ?? props.label}
       </NavbarNavLink>
       <ul className="dropdown__menu">
@@ -99,10 +101,9 @@ function DropdownNavbarItemDesktop({
                 setShowDropdown(false);
                 const nextNavbarItem = dropdownRef.current!.nextElementSibling;
                 if (nextNavbarItem) {
-                  const targetItem =
-                    nextNavbarItem instanceof HTMLAnchorElement
-                      ? nextNavbarItem
-                      : // Next item is another dropdown; focus on the inner
+                  const targetItem = nextNavbarItem instanceof HTMLAnchorElement
+                    ? nextNavbarItem
+                    : // Next item is another dropdown; focus on the inner
                         // anchor element instead so there's outline
                         nextNavbarItem.querySelector('a')!;
                   targetItem.focus();
@@ -129,7 +130,7 @@ function DropdownNavbarItemMobile({
   const localPathname = useLocalPathname();
   const containsActive = containsActiveItems(items, localPathname);
 
-  const {collapsed, toggleCollapsed, setCollapsed} = useCollapsible({
+  const { collapsed, toggleCollapsed, setCollapsed } = useCollapsible({
     initialState: () => !containsActive,
   });
 
@@ -144,7 +145,8 @@ function DropdownNavbarItemMobile({
     <li
       className={clsx('menu__list-item', {
         'menu__list-item--collapsed': collapsed,
-      })}>
+      })}
+    >
       <NavbarNavLink
         role="button"
         className={clsx(
@@ -155,7 +157,8 @@ function DropdownNavbarItemMobile({
         onClick={(e) => {
           e.preventDefault();
           toggleCollapsed();
-        }}>
+        }}
+      >
         {props.children ?? props.label}
       </NavbarNavLink>
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>

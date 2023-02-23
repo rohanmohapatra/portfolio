@@ -1,10 +1,13 @@
-import React from 'react';
+import {
+  Box, Heading, Stack, useColorModeValue,
+} from '@chakra-ui/react';
 import Layout from '@theme/Layout';
-import { Box, Heading, Stack, useColorModeValue } from '@chakra-ui/react';
-import { useBackgroundImage } from '../components/Theme';
+import React from 'react';
 import Iframe from 'react-iframe';
 
-const Resume = () => {
+import { useBackgroundImage } from '../components/Theme';
+
+function Resume() {
   const backgroundImage = useBackgroundImage();
   return (
     <Stack
@@ -30,18 +33,18 @@ const Resume = () => {
           url="/pdfs/RohanMohapatra_Resume.pdf"
           width="800px"
           height="1100px"
-        ></Iframe>
+        />
       </Box>
     </Stack>
   );
-};
+}
 
-const ResumeWrapper = () => {
+function ResumeWrapper() {
   return (
     <Layout title="Rohan Mohapatra | Résumé">
       <Resume />
     </Layout>
   );
-};
+}
 
 export default ResumeWrapper;

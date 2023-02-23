@@ -1,15 +1,15 @@
-import React from 'react';
 import {
-  Image,
+  BoxProps,
+  Button,
   Heading,
+  HStack,
+  Icon,
+  Image,
   Stack,
   Text,
-  Button,
-  Icon,
-  BoxProps,
-  HStack,
   useColorModeValue,
 } from '@chakra-ui/react';
+import React from 'react';
 import { FaRocket, FaUserAstronaut } from 'react-icons/fa';
 import ScrollIntoView from 'react-scroll-into-view';
 

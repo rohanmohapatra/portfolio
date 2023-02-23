@@ -3,8 +3,6 @@ import {
   ThemeOverride,
   useColorMode as useChakraColorMode,
 } from '@chakra-ui/react';
-import { useColorMode } from '@docusaurus/theme-common';
-import { useEffect } from 'react';
 
 const overrides: ThemeOverride = {
   styles: {
@@ -24,18 +22,19 @@ const overrides: ThemeOverride = {
     }),
   },
   fonts: {
-    heading: `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-    body: `Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-    mono: `SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace`,
+    heading:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    body: 'Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    mono: 'SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
   },
   colors: {
     red: {
-      '500': '#FF4F5B',
-      '600': '#FF3643',
-      '700': '#FF0214',
+      500: '#FF4F5B',
+      600: '#FF3643',
+      700: '#FF0214',
     },
     gray: {
-      '1000': '#0F0F0F',
+      1000: '#0F0F0F',
     },
   },
   components: {
@@ -48,6 +47,9 @@ const overrides: ThemeOverride = {
     Button: {
       baseStyle: { _focus: { boxShadow: 'none' } },
       variants: {
+        link: {
+          color: 'white',
+        },
         solid: {
           bg: 'red.500',
           _hover: {
@@ -62,17 +64,17 @@ const overrides: ThemeOverride = {
           color: 'gray.800',
           _hover: {
             _before: {
-              transform: `scaleX(1)`,
+              transform: 'scaleX(1)',
             },
           },
           _active: {},
           _before: {
             bg: 'red.500',
-            content: `""`,
+            content: '""',
             position: 'absolute',
             display: 'block',
             width: '100%',
-            transform: `scaleX(0)`,
+            transform: 'scaleX(0)',
             height: '0.3rem',
             bottom: 0,
             left: 0,
@@ -83,8 +85,8 @@ const overrides: ThemeOverride = {
       sizes: {
         '3xl': {
           width: '20rem',
-          height: '12rem',
-          padding: '2rem',
+          height: '10rem',
+          padding: '1rem',
         },
       },
     },
@@ -99,12 +101,11 @@ const overrides: ThemeOverride = {
 export const useBackgroundImage = () => {
   const { colorMode } = useChakraColorMode();
 
-  if (colorMode == 'dark') {
+  if (colorMode === 'dark') {
     // Onyx Black #0f0f0f
     return "linear-gradient(to bottom, rgba(15, 15, 15, 0.98) 45%,rgba(15, 15, 15, 0.85) 100%), url('/images/background.jpg');";
-  } else {
-    return "linear-gradient(to bottom, rgba(255, 255, 255, 1) 30%,rgba(255, 255, 255, 0.9) 100%), url('/images/background.jpg');";
   }
+  return "linear-gradient(to bottom, rgba(255, 255, 255, 0.99) 30%,rgba(255, 255, 255, 0.9) 100%), url('/images/background.jpg');";
 };
 
 export const theme = extendTheme(overrides);

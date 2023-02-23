@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   BoxProps,
   Button,
@@ -13,14 +12,16 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
+import React from 'react';
 import { FaDownload } from 'react-icons/fa';
+
 import { openUrl } from '../../utils/helpers';
 
 export const AboutMe: React.FC<BoxProps> = (props) => {
   const text = useColorModeValue('gray.800', 'gray.100');
   const image = useColorModeValue(
     '/images/about-me.svg',
-    '/images/about-me-dark.svg'
+    '/images/about-me-dark.svg',
   );
   return (
     <Stack justify="center" alignItems="center" {...props}>

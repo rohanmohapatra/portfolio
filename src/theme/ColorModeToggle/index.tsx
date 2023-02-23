@@ -1,13 +1,13 @@
-import React from 'react';
-import clsx from 'clsx';
-import useIsBrowser from '@docusaurus/useIsBrowser';
+import { useColorMode } from '@chakra-ui/react';
 import { translate } from '@docusaurus/Translate';
-import IconLightMode from '@theme/Icon/LightMode';
-import IconDarkMode from '@theme/Icon/DarkMode';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 import type { Props } from '@theme/ColorModeToggle';
+import IconDarkMode from '@theme/Icon/DarkMode';
+import IconLightMode from '@theme/Icon/LightMode';
+import clsx from 'clsx';
+import React from 'react';
 
 import styles from './styles.module.css';
-import { useColorMode } from '@chakra-ui/react';
 
 function ColorModeToggle({ className, value, onChange }: Props): JSX.Element {
   const isBrowser = useIsBrowser();
@@ -28,16 +28,16 @@ function ColorModeToggle({ className, value, onChange }: Props): JSX.Element {
       mode:
         value === 'dark'
           ? translate({
-              message: 'dark mode',
-              id: 'theme.colorToggle.ariaLabel.mode.dark',
-              description: 'The name for the dark color mode',
-            })
+            message: 'dark mode',
+            id: 'theme.colorToggle.ariaLabel.mode.dark',
+            description: 'The name for the dark color mode',
+          })
           : translate({
-              message: 'light mode',
-              id: 'theme.colorToggle.ariaLabel.mode.light',
-              description: 'The name for the light color mode',
-            }),
-    }
+            message: 'light mode',
+            id: 'theme.colorToggle.ariaLabel.mode.light',
+            description: 'The name for the light color mode',
+          }),
+    },
   );
 
   return (
@@ -46,7 +46,7 @@ function ColorModeToggle({ className, value, onChange }: Props): JSX.Element {
         className={clsx(
           'clean-btn',
           styles.toggleButton,
-          !isBrowser && styles.toggleButtonDisabled
+          !isBrowser && styles.toggleButtonDisabled,
         )}
         type="button"
         onClick={() => handleColorMode(value)}
