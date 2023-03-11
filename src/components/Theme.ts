@@ -38,6 +38,14 @@ const overrides: ThemeOverride = {
     },
   },
   components: {
+    Menu: {
+      baseStyle: {
+        menu: {},
+        item: {
+          justifyContent: 'center',
+        },
+      },
+    },
     Heading: {
       baseStyle: {
         fontFamily: 'Poppins',

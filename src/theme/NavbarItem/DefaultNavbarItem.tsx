@@ -15,7 +15,7 @@ function DefaultNavbarItemDesktop({
     <NavbarNavLink
       className={clsx(
         isDropdownItem ? 'dropdown__link' : 'navbar__item navbar__link',
-        className,
+        className
       )}
       isDropdownLink={isDropdownItem}
       {...props}
@@ -51,8 +51,8 @@ export default function DefaultNavbarItem({
     <Comp
       {...props}
       activeClassName={
-        props.activeClassName
-        ?? (mobile ? 'menu__link--active' : 'navbar__link--active')
+        props.activeClassName ??
+        (mobile ? 'menu__link--active' : 'navbar__link--active')
       }
     />
   );

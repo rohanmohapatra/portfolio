@@ -1,5 +1,13 @@
 import {
-  Icon, IconButton, Stack, StackProps,
+  Icon,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Stack,
+  StackProps,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import React from 'react';
 import {
@@ -8,46 +16,95 @@ import {
   FaInstagram,
   FaLinkedin,
   FaTwitter,
+  FaPlus,
 } from 'react-icons/fa';
 
 import { openUrl } from '../../utils/helpers';
 
-export const IconBar: React.FC<StackProps> = (props) => (
-  <Stack spacing="2rem" {...props}>
-    <IconButton
-      aria-label="Linked In"
-      variant="ghost"
-      color="red.500"
-      icon={<Icon as={FaLinkedin} boxSize="1.5rem" />}
-      onClick={() => openUrl('https://www.linkedin.com/in/rohan-mohapatra/')}
-    />
-    <IconButton
-      aria-label="Github"
-      variant="ghost"
-      color="red.500"
-      icon={<Icon as={FaGithub} boxSize="1.5rem" />}
-      onClick={() => openUrl('https://github.com/rohanmohapatra')}
-    />
-    <IconButton
-      aria-label="GitLab"
-      variant="ghost"
-      color="red.500"
-      icon={<Icon as={FaGitlab} boxSize="1.5rem" />}
-      onClick={() => openUrl('https://gitlab.com/RohanMohapatra')}
-    />
-    <IconButton
-      aria-label="Instagram"
-      variant="ghost"
-      color="red.500"
-      icon={<Icon as={FaInstagram} boxSize="1.5rem" />}
-      onClick={() => openUrl('https://www.instagram.com/monodimension')}
-    />
-    <IconButton
-      aria-label="Twitter"
-      variant="ghost"
-      color="red.500"
-      icon={<Icon as={FaTwitter} boxSize="1.5rem" />}
-      onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
-    />
-  </Stack>
-);
+export const IconBar: React.FC<StackProps> = (props) => {
+  const showMenu = useBreakpointValue({ base: true, lg: false });
+  if (showMenu) {
+    return <IconMenu />;
+  }
+  return (
+    <Stack spacing="2rem" {...props}>
+      <IconButton
+        aria-label="Linked In"
+        variant="ghost"
+        color="red.500"
+        icon={<Icon as={FaLinkedin} boxSize="1.5rem" />}
+        onClick={() => openUrl('https://www.linkedin.com/in/rohan-mohapatra/')}
+      />
+      <IconButton
+        aria-label="Github"
+        variant="ghost"
+        color="red.500"
+        icon={<Icon as={FaGithub} boxSize="1.5rem" />}
+        onClick={() => openUrl('https://github.com/rohanmohapatra')}
+      />
+      <IconButton
+        aria-label="GitLab"
+        variant="ghost"
+        color="red.500"
+        icon={<Icon as={FaGitlab} boxSize="1.5rem" />}
+        onClick={() => openUrl('https://gitlab.com/RohanMohapatra')}
+      />
+      <IconButton
+        aria-label="Instagram"
+        variant="ghost"
+        color="red.500"
+        icon={<Icon as={FaInstagram} boxSize="1.5rem" />}
+        onClick={() => openUrl('https://www.instagram.com/monodimension')}
+      />
+      <IconButton
+        aria-label="Twitter"
+        variant="ghost"
+        color="red.500"
+        icon={<Icon as={FaTwitter} boxSize="1.5rem" />}
+        onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
+      />
+    </Stack>
+  );
+};
+
+const IconMenu = () => {
+  return (
+    <Menu>
+      <MenuButton
+        as={IconButton}
+        aria-label="Icon"
+        icon={<Icon as={FaPlus} boxSize="1.5rem" />}
+        position="fixed"
+        bottom="2%"
+        right="2%"
+        isRound
+        size="md"
+      />
+      <MenuList minW="0" w="5rem">
+        <MenuItem
+          onClick={() =>
+            openUrl('https://www.linkedin.com/in/rohan-mohapatra/')
+          }
+        >
+          <Icon as={FaLinkedin} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+        <MenuItem onClick={() => openUrl('https://github.com/rohanmohapatra')}>
+          <Icon as={FaGithub} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+        <MenuItem onClick={() => openUrl('https://gitlab.com/RohanMohapatra')}>
+          <Icon as={FaGitlab} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+        <MenuItem
+          onClick={() => openUrl('https://www.instagram.com/monodimension')}
+        >
+          <Icon as={FaInstagram} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+        <MenuItem
+          onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
+        >
+          <Icon as={FaTwitter} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+      </MenuList>
+    </Menu>
+  );
+};

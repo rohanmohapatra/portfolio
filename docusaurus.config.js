@@ -23,10 +23,13 @@ module.exports = {
     },
     navbar: {
       title: 'Rohan',
-      // logo: {
-      //   alt: 'My Site Logo',
-      //   src: 'img/logo.svg',
-      // },
+      logo: {
+        alt: 'Rohan Logo',
+        src: 'images/avataaars.png',
+        style: {
+          borderRadius: '50%',
+        },
+      },
       items: [
         { to: '#about', label: 'About', position: 'right' },
         { to: '#projects', label: 'Projects', position: 'right' },
