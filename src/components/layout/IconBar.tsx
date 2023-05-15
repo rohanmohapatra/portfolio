@@ -69,14 +69,14 @@ export const IconBar: React.FC<StackProps> = (props) => {
 
 const IconMenu = () => {
   return (
-    <Menu>
+    <Menu autoSelect={false}>
       <MenuButton
         as={IconButton}
         aria-label="Icon"
         icon={<Icon as={FaPlus} boxSize="1.5rem" />}
         position="fixed"
-        bottom="2%"
-        right="2%"
+        bottom="3%"
+        right="5%"
         isRound
         size="md"
       />

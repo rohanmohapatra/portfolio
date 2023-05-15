@@ -7,12 +7,11 @@ import {
   Spinner,
   Stack,
   Text,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import {
-  FaCode, FaCodeBranch, FaPlay, FaStar,
-} from 'react-icons/fa';
+import { FaCode, FaCodeBranch, FaPlay, FaStar } from 'react-icons/fa';
 
 import { openUrl } from '../../utils/helpers';
 import requiredProjects from '../../utils/projects.json';
@@ -93,6 +92,7 @@ const ProjectCard: React.FC<Project> = (props) => {
 
 export const Projects: React.FC<BoxProps> = (props) => {
   const [projects, setProjects] = useState<Project[]>([]);
+  const projectsLength = useBreakpointValue({ base: 5, md: 'full' });
 
   useEffect(() => {
     const url = 'https://api.github.com/user/repos?per_page=100';
@@ -106,7 +106,9 @@ export const Projects: React.FC<BoxProps> = (props) => {
       .then((result) => {
         let projectsData: Project[] = result.data;
         console.log(requiredProjects);
-        projectsData = projectsData.filter((project) => requiredProjects.includes(project.name));
+        projectsData = projectsData.filter((project) =>
+          requiredProjects.includes(project.name)
+        );
         projectsData.sort((a, b) => b.stargazers_count - a.stargazers_count);
         //   .sort((a, b) => b.forks_count - a.forks_count);
         setProjects(projectsData);
@@ -119,15 +121,23 @@ export const Projects: React.FC<BoxProps> = (props) => {
       <Stack justify="center" alignItems="center" py="2rem">
         {projects.length ? (
           <SimpleGrid columns={3} spacing={2}>
-            {projects.map((project) => (
-              <ProjectCard {...project} key={project.id} />
-            ))}
+            {projectsLength && projectsLength === 'full'
+              ? projects.map((project) => (
+                  <ProjectCard {...project} key={project.id} />
+                ))
+              : projects
+                  .slice(0, Number(projectsLength))
+                  .map((project) => (
+                    <ProjectCard {...project} key={project.id} />
+                  ))}
             <Button
               as={Stack}
               size="3xl"
               justifyContent="space-between"
               alignItems="flex-start"
-              onClick={() => openUrl('https://github.com/rohanmohapatra?tab=repositories')}
+              onClick={() =>
+                openUrl('https://github.com/rohanmohapatra?tab=repositories')
+              }
               cursor="pointer"
             >
               <Heading
