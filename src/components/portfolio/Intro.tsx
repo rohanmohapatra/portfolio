@@ -23,8 +23,10 @@ export const Intro: React.FC<BoxProps> = (props) => {
       alignItems="center"
       justify="center"
       spacing={{ base: '2rem', md: '10rem' }}
-      h="100vh"
+      h={{ base: 'full', md: '100vh' }}
       pl={{ base: '1rem', md: '0rem' }}
+      pr={{ base: '1.5rem', md: '0rem' }}
+      pt={{ base: '1rem', md: '0rem' }}
       {...props}
     >
       <Stack h={{ base: '20rem', md: '50rem' }} justify="center">
@@ -38,7 +40,10 @@ export const Intro: React.FC<BoxProps> = (props) => {
         <Text color={text} pt="2rem">
           Algorithms • Machine learning • Microservices • React JS
         </Text>
-        <HStack mt="4rem !important">
+        <HStack
+          mt="4rem !important"
+          justify={{ base: 'center', md: 'flex-start' }}
+        >
           <ScrollIntoView selector="#about">
             <Button
               maxW="md"

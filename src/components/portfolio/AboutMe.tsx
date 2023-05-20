@@ -21,10 +21,15 @@ export const AboutMe: React.FC<BoxProps> = (props) => {
   const text = useColorModeValue('gray.800', 'gray.100');
   const image = useColorModeValue(
     '/images/about-me.svg',
-    '/images/about-me-dark.svg',
+    '/images/about-me-dark.svg'
   );
   return (
-    <Stack justify="center" alignItems="center" {...props}>
+    <Stack
+      justify="center"
+      alignItems="center"
+      pr={{ base: '1.5rem', md: '0rem' }}
+      {...props}
+    >
       <Heading fontSize="2xl">About Me</Heading>
       <Text color={text}>My Introduction</Text>
       <Stack direction={{ base: 'column', md: 'row' }} pt="3rem">

@@ -22,11 +22,12 @@ export const Publications: React.FC<BoxProps> = (props) => (
       direction={['column', 'row']}
       w="full"
       justify="center"
+      align="center"
       color="white"
     >
       <Button
         as={Stack}
-        maxW="full"
+        maxW={{ base: '90%', md: 'full' }}
         h="15rem"
         alignItems="flex-start"
         p="2rem"
@@ -38,18 +39,18 @@ export const Publications: React.FC<BoxProps> = (props) => (
         }
       >
         <Image src="/images/springerlink.svg" h="3rem" />
-        <Stack whiteSpace="normal" w="30rem">
-          <Text fontSize="lg">
+        <Stack whiteSpace="normal" w={{ base: 'full', md: '30rem' }}>
+          <Text fontSize="lg" wordBreak="break-word">
             A New Approach for Momentum Particle Swarm Optimization
           </Text>
-          <Text fontSize="md" fontWeight="normal">
+          <Text fontSize="md" fontWeight="normal" wordBreak="break-word">
             Advances in Machine Learning and Computational Intelligence
           </Text>
         </Stack>
       </Button>
       <Button
         as={Stack}
-        maxW="full"
+        maxW={{ base: '90%', md: 'full' }}
         h="15rem"
         alignItems="flex-start"
         p="2rem"
@@ -59,12 +60,12 @@ export const Publications: React.FC<BoxProps> = (props) => (
         }
       >
         <Image src="/images/ieee_logo_white.png" h="3rem" />
-        <Stack whiteSpace="normal" w="30rem">
-          <Text fontSize="lg">
+        <Stack whiteSpace="normal" w={{ base: 'full', md: '30rem' }}>
+          <Text fontSize="lg" wordBreak="break-word">
             AdaSwarm: Augmenting Gradient-Based Optimizers in Deep Learning With
             Swarm Intelligence
           </Text>
-          <Text fontSize="md" fontWeight="normal">
+          <Text fontSize="md" fontWeight="normal" wordBreak="break-word">
             IEEE Transactions on Emerging Topics in Computational Intelligence
           </Text>
         </Stack>

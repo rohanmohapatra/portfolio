@@ -120,7 +120,7 @@ export const Projects: React.FC<BoxProps> = (props) => {
       <Heading fontSize="2xl">Projects</Heading>
       <Stack justify="center" alignItems="center" py="2rem">
         {projects.length ? (
-          <SimpleGrid columns={3} spacing={2}>
+          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={2}>
             {projectsLength && projectsLength === 'full'
               ? projects.map((project) => (
                   <ProjectCard {...project} key={project.id} />

@@ -15,10 +15,6 @@ import React from 'react';
 
 export const ContactMe: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // const location = useLocation();
-  // if (location.pathname.includes('blog')) {
-  //   return null;
-  // }
   return (
     <>
       <ChakraLink
@@ -35,7 +31,7 @@ export const ContactMe: React.FC = () => {
           <ModalHeader>Want to connect?</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            Email me at
+            Email me at{' '}
             <ChakraLink color="red.500">rohannmohapatra@gmail.com</ChakraLink>
           </ModalBody>
 

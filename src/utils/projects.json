@@ -1,7 +1,8 @@
 [
   "hdbscan-cpp",
   "torchswarm",
-  "harmony-in",
+  "kafka-table",
+  "flexi-events",
   "simple-pascal-compiler",
   "adaswarm",
   "docassist.io",
@@ -9,7 +10,6 @@
   "selfieless-acts-microservice",
   "scale-invariant-cnn",
   "springfield-inforetrieve",
-  "ravi-suri",
   "souloride",
   "aatmatrisha18",
   "dockerized-databases"

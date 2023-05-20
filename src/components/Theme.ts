@@ -37,6 +37,9 @@ const overrides: ThemeOverride = {
       1000: '#0F0F0F',
     },
   },
+  shadows: {
+    outline: '0 0 4px 2px #FF4F5B',
+  },
   components: {
     Menu: {
       baseStyle: {

@@ -10,7 +10,7 @@ export const Layout: React.FC = () => {
 
   return (
     <Stack
-      pl={{ base: '1rem', md: '5rem' }}
+      pl={{ base: '0rem', md: '5rem' }}
       boxSize="full"
       backgroundImage={backgroundImage}
     >
