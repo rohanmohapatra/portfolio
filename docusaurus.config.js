@@ -3,7 +3,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Eat.Sleep.Code.Repeat',
+  title: 'Eat. Sleep. Code. Repeat',
   tagline: 'Software Developer',
   url: 'https://rohanmohapatra.github.com',
   baseUrl: '/',

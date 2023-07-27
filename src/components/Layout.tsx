@@ -15,7 +15,7 @@ export const Layout: React.FC = () => {
       backgroundImage={backgroundImage}
     >
       <HStack boxSize="full">
-        <IconBar position="fixed" top="35%" />
+        <IconBar position="fixed" top="28%" />
         <Portfolio />
       </HStack>
     </Stack>

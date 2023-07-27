@@ -18,8 +18,10 @@ import {
   FaTwitter,
   FaPlus,
 } from 'react-icons/fa';
+import { SiGooglescholar } from 'react-icons/si';
 
 import { openUrl } from '../../utils/helpers';
+import { GoogleScholar } from '../icons/GoogleScholar';
 
 export const IconBar: React.FC<StackProps> = (props) => {
   const showMenu = useBreakpointValue({ base: true, lg: false });
@@ -63,6 +65,17 @@ export const IconBar: React.FC<StackProps> = (props) => {
         icon={<Icon as={FaTwitter} boxSize="1.5rem" />}
         onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
       />
+      <IconButton
+        aria-label="Google Scholar"
+        variant="ghost"
+        color="red.500"
+        icon={<Icon as={SiGooglescholar} boxSize="1.5rem" />}
+        onClick={() =>
+          openUrl(
+            'https://scholar.google.com/citations?user=9a3mq_oAAAAJ&hl=en'
+          )
+        }
+      />
     </Stack>
   );
 };
@@ -103,6 +116,15 @@ const IconMenu = () => {
           onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
         >
           <Icon as={FaTwitter} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+        <MenuItem
+          onClick={() =>
+            openUrl(
+              'https://scholar.google.com/citations?user=9a3mq_oAAAAJ&hl=en'
+            )
+          }
+        >
+          <Icon as={SiGooglescholar} color="red.500" boxSize="1.5rem" />
         </MenuItem>
       </MenuList>
     </Menu>

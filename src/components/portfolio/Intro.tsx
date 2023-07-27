@@ -10,7 +10,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import React from 'react';
-import { FaRocket, FaUserAstronaut } from 'react-icons/fa';
+import { FaRocket, FaUserAstronaut, FaFile } from 'react-icons/fa';
 import ScrollIntoView from 'react-scroll-into-view';
 
 export const Intro: React.FC<BoxProps> = (props) => {
@@ -56,6 +56,11 @@ export const Intro: React.FC<BoxProps> = (props) => {
           <ScrollIntoView selector="#projects">
             <Button maxW="md" bg="red.500" rightIcon={<Icon as={FaRocket} />}>
               Projects
+            </Button>
+          </ScrollIntoView>
+          <ScrollIntoView selector="#publications">
+            <Button maxW="md" bg="red.500" rightIcon={<Icon as={FaFile} />}>
+              Publications
             </Button>
           </ScrollIntoView>
         </HStack>
