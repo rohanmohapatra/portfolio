@@ -7,18 +7,17 @@ import {
   MenuList,
   Stack,
   StackProps,
+  Tooltip,
   useBreakpointValue,
 } from '@chakra-ui/react';
 import React from 'react';
 import {
   FaGithub,
-  FaGitlab,
   FaInstagram,
   FaLinkedin,
   FaTwitter,
   FaPlus,
 } from 'react-icons/fa';
-import { SiGooglescholar } from 'react-icons/si';
 
 import { openUrl } from '../../utils/helpers';
 import { GoogleScholar } from '../icons/GoogleScholar';
@@ -30,52 +29,62 @@ export const IconBar: React.FC<StackProps> = (props) => {
   }
   return (
     <Stack spacing="2rem" {...props}>
-      <IconButton
-        aria-label="Linked In"
-        variant="ghost"
-        color="red.500"
-        icon={<Icon as={FaLinkedin} boxSize="1.5rem" />}
-        onClick={() => openUrl('https://www.linkedin.com/in/rohan-mohapatra/')}
-      />
-      <IconButton
-        aria-label="Github"
-        variant="ghost"
-        color="red.500"
-        icon={<Icon as={FaGithub} boxSize="1.5rem" />}
-        onClick={() => openUrl('https://github.com/rohanmohapatra')}
-      />
-      <IconButton
-        aria-label="GitLab"
-        variant="ghost"
-        color="red.500"
-        icon={<Icon as={FaGitlab} boxSize="1.5rem" />}
-        onClick={() => openUrl('https://gitlab.com/RohanMohapatra')}
-      />
-      <IconButton
-        aria-label="Instagram"
-        variant="ghost"
-        color="red.500"
-        icon={<Icon as={FaInstagram} boxSize="1.5rem" />}
-        onClick={() => openUrl('https://www.instagram.com/monodimension')}
-      />
-      <IconButton
-        aria-label="Twitter"
-        variant="ghost"
-        color="red.500"
-        icon={<Icon as={FaTwitter} boxSize="1.5rem" />}
-        onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
-      />
-      <IconButton
-        aria-label="Google Scholar"
-        variant="ghost"
-        color="red.500"
-        icon={<Icon as={SiGooglescholar} boxSize="1.5rem" />}
-        onClick={() =>
-          openUrl(
-            'https://scholar.google.com/citations?user=9a3mq_oAAAAJ&hl=en'
-          )
-        }
-      />
+      <Tooltip hasArrow placement="right-start" label="Linked In" fontSize="md">
+        <IconButton
+          aria-label="Linked In"
+          variant="ghost"
+          color="red.500"
+          icon={<Icon as={FaLinkedin} boxSize="1.5rem" />}
+          onClick={() =>
+            openUrl('https://www.linkedin.com/in/rohan-mohapatra/')
+          }
+        />
+      </Tooltip>
+      <Tooltip hasArrow placement="right-start" label="Github" fontSize="md">
+        <IconButton
+          aria-label="Github"
+          variant="ghost"
+          color="red.500"
+          icon={<Icon as={FaGithub} boxSize="1.5rem" />}
+          onClick={() => openUrl('https://github.com/rohanmohapatra')}
+        />
+      </Tooltip>
+      <Tooltip
+        hasArrow
+        placement="right-start"
+        label="Google Scholar"
+        fontSize="md"
+      >
+        <IconButton
+          aria-label="Google Scholar"
+          variant="ghost"
+          color="red.500"
+          icon={<Icon as={GoogleScholar} boxSize="1.5rem" />}
+          onClick={() =>
+            openUrl(
+              'https://scholar.google.com/citations?user=9a3mq_oAAAAJ&hl=en'
+            )
+          }
+        />
+      </Tooltip>
+      <Tooltip hasArrow placement="right-start" label="Instagram" fontSize="md">
+        <IconButton
+          aria-label="Instagram"
+          variant="ghost"
+          color="red.500"
+          icon={<Icon as={FaInstagram} boxSize="1.5rem" />}
+          onClick={() => openUrl('https://www.instagram.com/monodimension')}
+        />
+      </Tooltip>
+      <Tooltip hasArrow placement="right-start" label="Twitter" fontSize="md">
+        <IconButton
+          aria-label="Twitter"
+          variant="ghost"
+          color="red.500"
+          icon={<Icon as={FaTwitter} boxSize="1.5rem" />}
+          onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
+        />
+      </Tooltip>
     </Stack>
   );
 };
@@ -104,8 +113,14 @@ const IconMenu = () => {
         <MenuItem onClick={() => openUrl('https://github.com/rohanmohapatra')}>
           <Icon as={FaGithub} color="red.500" boxSize="1.5rem" />
         </MenuItem>
-        <MenuItem onClick={() => openUrl('https://gitlab.com/RohanMohapatra')}>
-          <Icon as={FaGitlab} color="red.500" boxSize="1.5rem" />
+        <MenuItem
+          onClick={() =>
+            openUrl(
+              'https://scholar.google.com/citations?user=9a3mq_oAAAAJ&hl=en'
+            )
+          }
+        >
+          <Icon as={GoogleScholar} color="red.500" boxSize="1.5rem" />
         </MenuItem>
         <MenuItem
           onClick={() => openUrl('https://www.instagram.com/monodimension')}
@@ -116,15 +131,6 @@ const IconMenu = () => {
           onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
         >
           <Icon as={FaTwitter} color="red.500" boxSize="1.5rem" />
-        </MenuItem>
-        <MenuItem
-          onClick={() =>
-            openUrl(
-              'https://scholar.google.com/citations?user=9a3mq_oAAAAJ&hl=en'
-            )
-          }
-        >
-          <Icon as={SiGooglescholar} color="red.500" boxSize="1.5rem" />
         </MenuItem>
       </MenuList>
     </Menu>
