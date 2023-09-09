@@ -55,7 +55,7 @@ export const AboutMe: React.FC<BoxProps> = (props) => {
               <StatHelpText>Projects</StatHelpText>
             </Stat>
             <Stat>
-              <StatNumber>2</StatNumber>
+              <StatNumber>3+</StatNumber>
               <StatHelpText>Publications</StatHelpText>
             </Stat>
           </HStack>
