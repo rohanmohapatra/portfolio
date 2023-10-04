@@ -99,13 +99,12 @@ export const Projects: React.FC<BoxProps> = (props) => {
     axios
       .get(url, {
         headers: {
-          Authorization: `Bearer ${atob(githubToken)}`,
+          Authorization: `Bearer ${window.atob(githubToken)}`,
           Accept: 'application/vnd.github+json',
         },
       })
       .then((result) => {
         let projectsData: Project[] = result.data;
-        console.log(requiredProjects);
         projectsData = projectsData.filter((project) =>
           requiredProjects.includes(project.name)
         );
