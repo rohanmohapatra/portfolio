@@ -15,7 +15,7 @@ import { FaCode, FaCodeBranch, FaPlay, FaStar } from 'react-icons/fa';
 
 import { openUrl } from '../../utils/helpers';
 import requiredProjects from '../../utils/projects.json';
-import { githubToken } from './constants';
+import { backendApi } from './constants';
 
 interface Project {
   id: number;
@@ -95,23 +95,26 @@ export const Projects: React.FC<BoxProps> = (props) => {
   const projectsLength = useBreakpointValue({ base: 5, md: 'full' });
 
   useEffect(() => {
-    const url = 'https://api.github.com/user/repos?per_page=100';
-    axios
-      .get(url, {
-        headers: {
-          Authorization: `Bearer ${window.atob(githubToken)}`,
-          Accept: 'application/vnd.github+json',
-        },
-      })
-      .then((result) => {
-        let projectsData: Project[] = result.data;
-        projectsData = projectsData.filter((project) =>
-          requiredProjects.includes(project.name)
-        );
-        projectsData.sort((a, b) => b.stargazers_count - a.stargazers_count);
-        //   .sort((a, b) => b.forks_count - a.forks_count);
-        setProjects(projectsData);
-      });
+    axios.get(backendApi).then((result) => {
+      const githubToken = result.data.access_token;
+      const url = 'https://api.github.com/user/repos?per_page=100';
+      axios
+        .get(url, {
+          headers: {
+            Authorization: `Bearer ${githubToken}`,
+            Accept: 'application/vnd.github+json',
+          },
+        })
+        .then((result) => {
+          let projectsData: Project[] = result.data;
+          projectsData = projectsData.filter((project) =>
+            requiredProjects.includes(project.name)
+          );
+          projectsData.sort((a, b) => b.stargazers_count - a.stargazers_count);
+          //   .sort((a, b) => b.forks_count - a.forks_count);
+          setProjects(projectsData);
+        });
+    });
   }, []);
 
   return (
