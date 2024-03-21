@@ -7,11 +7,11 @@ import {
   Avatar,
   HStack,
   Text,
-  useColorModeValue,
-} from '@chakra-ui/react'
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa6'
-import { FaGlobeAmericas } from 'react-icons/fa'
-import Head from 'next/head'
+  useColorModeValue
+} from '@chakra-ui/react';
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa6';
+import { FaGlobeAmericas } from 'react-icons/fa';
+import Head from 'next/head';
 
 const Title = ({ title, date }: { title: string; date: string }) => {
   return (
@@ -23,38 +23,38 @@ const Title = ({ title, date }: { title: string; date: string }) => {
         {date}
       </Heading>
     </HStack>
-  )
-}
+  );
+};
 
 const ContactInformation = (props: {
-  type: 'email' | 'linkedin' | 'number' | 'website' | 'github'
-  value: string
+  type: 'email' | 'linkedin' | 'number' | 'website' | 'github';
+  value: string;
 }) => {
-  const { type, value } = props
+  const { type, value } = props;
   const getIcon = () => {
     switch (type) {
       case 'email':
-        return <FaEnvelope />
+        return <FaEnvelope />;
       case 'number':
-        return <FaPhone />
+        return <FaPhone />;
       case 'linkedin':
-        return <FaLinkedin />
+        return <FaLinkedin />;
       case 'website':
-        return <FaGlobeAmericas />
+        return <FaGlobeAmericas />;
       case 'github':
-        return <FaGithub />
+        return <FaGithub />;
 
       default:
-        break
+        break;
     }
-  }
+  };
   return (
     <HStack>
       {getIcon()}
       <Text>{value}</Text>
     </HStack>
-  )
-}
+  );
+};
 
 const Information = () => {
   return (
@@ -103,7 +103,7 @@ const Information = () => {
           'Neo4j Graph DB',
           'PostgreSQL',
           'Oracle',
-          'MySQL',
+          'MySQL'
         ].map((db) => (
           <Text key={db}> {db}</Text>
         ))}
@@ -121,7 +121,7 @@ const Information = () => {
           'Kubernetes',
           'React.js',
           'Hadoop / Hive',
-          'LaTeX',
+          'LaTeX'
         ].map((db) => (
           <Text key={db}>{db}</Text>
         ))}
@@ -148,8 +148,8 @@ const Information = () => {
         </Text>
       </Stack>
     </Stack>
-  )
-}
+  );
+};
 
 const OnlineResume = () => {
   return (
@@ -360,7 +360,7 @@ const OnlineResume = () => {
         </Stack>
       </Stack>
     </>
-  )
-}
+  );
+};
 
-export default OnlineResume
+export default OnlineResume;

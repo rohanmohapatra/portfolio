@@ -1,16 +1,16 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import React from "react";
-import { extendTheme } from "@chakra-ui/react";
-import { IconBar, theme as baseTheme } from "@portfolio/shared";
-import "@fontsource/noto-sans-mono";
-import "@fontsource/inter";
+import { ChakraProvider } from '@chakra-ui/react';
+import React from 'react';
+import { extendTheme } from '@chakra-ui/react';
+import { IconBar, theme as baseTheme } from '@portfolio/shared';
+import '@fontsource/noto-sans-mono';
+import '@fontsource/inter';
 
 const theme = extendTheme(
   {
     fonts: {
       heading: `'Inter', sans-serif`,
-      body: `'Inter', sans-serif`,
-    },
+      body: `'Inter', sans-serif`
+    }
   },
   baseTheme
 );

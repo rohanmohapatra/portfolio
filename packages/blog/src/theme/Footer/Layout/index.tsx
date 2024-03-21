@@ -1,6 +1,6 @@
-import React from "react";
-import { Stack, Heading } from "@chakra-ui/react";
-import "@fontsource/noto-sans-mono";
+import React from 'react';
+import { Stack, Heading } from '@chakra-ui/react';
+import '@fontsource/noto-sans-mono';
 
 export default function LayoutWrapper(props) {
   return (

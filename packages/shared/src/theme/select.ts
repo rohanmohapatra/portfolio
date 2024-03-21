@@ -1,8 +1,8 @@
-import { selectAnatomy } from '@chakra-ui/anatomy'
-import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+import { selectAnatomy } from '@chakra-ui/anatomy';
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
 
 const { definePartsStyle, defineMultiStyleConfig } =
-  createMultiStyleConfigHelpers(selectAnatomy.keys)
+  createMultiStyleConfigHelpers(selectAnatomy.keys);
 
 const flushed = definePartsStyle({
   field: {
@@ -13,8 +13,8 @@ const flushed = definePartsStyle({
     fontWeight: 600,
     _focus: {
       borderColor: 'red.500',
-      boxShadow: '0 0px 0px 0 #FF4F5B',
-    },
-  },
-})
-export const Select = defineMultiStyleConfig({ variants: { flushed } })
+      boxShadow: '0 0px 0px 0 #FF4F5B'
+    }
+  }
+});
+export const Select = defineMultiStyleConfig({ variants: { flushed } });

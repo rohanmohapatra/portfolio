@@ -1,21 +1,21 @@
-import { Box } from '@chakra-ui/react'
-import { ReactNode } from 'react'
-import { useRouter } from 'next/router'
+import { Box } from '@chakra-ui/react';
+import { ReactNode } from 'react';
+import { useRouter } from 'next/router';
 
-import { useBackgroundImage } from '../theme'
+import { useBackgroundImage } from '../theme';
 
-import { Navbar } from './layout/navbar'
-import { IconBar } from './layout/iconbar'
+import { Navbar } from './layout/navbar';
+import { IconBar } from './layout/iconbar';
 
 interface LayoutProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-  const backgroundImage = useBackgroundImage()
-  const router = useRouter()
-  const showIconbar = !(router.pathname === '/resume')
-  console.log(router.pathname)
+  const backgroundImage = useBackgroundImage();
+  const router = useRouter();
+  const showIconbar = !(router.pathname === '/resume');
+  console.log(router.pathname);
   return (
     <Box
       backgroundImage={backgroundImage}
@@ -27,5 +27,5 @@ export const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       {children}
     </Box>
-  )
-}
+  );
+};

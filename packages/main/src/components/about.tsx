@@ -5,10 +5,10 @@ import {
   Heading,
   Image,
   Stack,
-  Text,
-} from '@chakra-ui/react'
+  Text
+} from '@chakra-ui/react';
 
-import { Divider } from './shared/divider'
+import { Divider } from './shared/divider';
 
 export const About = (props: BoxProps) => {
   return (
@@ -62,5 +62,5 @@ export const About = (props: BoxProps) => {
         </Box>
       </HStack>
     </Stack>
-  )
-}
+  );
+};

@@ -3,19 +3,15 @@ import {
   Center,
   HStack,
   Image,
-  Switch,
-  Text,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { PiHandWavingBold } from "react-icons/pi";
-import { useRouter } from "next/router";
-import { ColorModeSwitch } from "@portfolio/shared";
+  useColorModeValue
+} from '@chakra-ui/react';
+import { PiHandWavingBold } from 'react-icons/pi';
+import { useRouter } from 'next/router';
+import { ColorModeSwitch } from '@portfolio/shared';
 
-import { openUrl } from "../../lib/utils";
+import { openUrl } from '../../lib/utils';
 
 export const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
   const router = useRouter();
 
   const navigate = async (item: (typeof items)[0]) => {
@@ -25,23 +21,22 @@ export const Navbar = () => {
     }
 
     // Scroll only if on main page
-    console.log(router.pathname);
-    if (item.href === "/") {
+    if (item.href === '/') {
       const element = document.querySelector(item.selector);
       element?.scrollIntoView({
-        inline: "nearest",
-        block: "center",
-        behavior: "smooth",
+        inline: 'nearest',
+        block: 'center',
+        behavior: 'smooth'
       });
     }
   };
 
   const items = [
-    { name: "Home", selector: "#home", href: "/" },
-    { name: "About", selector: "#about", href: "/" },
-    { name: "Projects", selector: "#projects", href: "/" },
-    { name: "Publications", selector: "#publications", href: "/" },
-    { name: "Résumé", selector: "#", href: "/resume" },
+    { name: 'Home', selector: '#home', href: '/' },
+    { name: 'About', selector: '#about', href: '/' },
+    { name: 'Projects', selector: '#projects', href: '/' },
+    { name: 'Publications', selector: '#publications', href: '/' },
+    { name: 'Résumé', selector: '#', href: '/resume' }
   ];
 
   return (
@@ -54,7 +49,7 @@ export const Navbar = () => {
         mb="2rem"
         border="0.75px solid"
         borderColor="red.500"
-        bg={useColorModeValue("white", "gray.1000")}
+        bg={useColorModeValue('white', 'gray.1000')}
         position="fixed"
         top="1rem"
         width="80%"
@@ -76,7 +71,7 @@ export const Navbar = () => {
               {item.name}
             </Button>
           ))}
-          <Button variant="nav" onClick={() => window.open("/blog")?.focus()}>
+          <Button variant="nav" onClick={() => window.open('/blog')?.focus()}>
             Blog
           </Button>
         </HStack>
@@ -86,7 +81,7 @@ export const Navbar = () => {
             size="md"
             variant="nav"
             rightIcon={<PiHandWavingBold fontSize="1.2rem" />}
-            onClick={() => openUrl("mailto:rohannmohapatra@gmail.com")}
+            onClick={() => openUrl('mailto:rohannmohapatra@gmail.com')}
           >
             Say Hello!
           </Button>

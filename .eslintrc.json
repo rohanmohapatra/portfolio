@@ -1,8 +1,17 @@
 {
-  "plugins": ["prettier"],
+  "root": true,
+  "plugins": ["prettier", "import"],
   "extends": ["prettier", "next"],
+  "settings": {
+    "next": {
+      "rootDir": ["packages/main/", "packages/api/"]
+    }
+  },
   "rules": {
     "no-console": "warn",
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "no-unused-vars": "error",
+    "import/order": ["error"],
+    "import/exports-last": "error"
   }
 }

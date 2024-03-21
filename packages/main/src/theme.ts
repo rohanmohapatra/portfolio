@@ -2,37 +2,36 @@ import {
   defineStyleConfig,
   extendTheme,
   ThemeOverride,
-  useColorMode as useChakraColorMode,
-} from "@chakra-ui/react";
+  useColorMode as useChakraColorMode
+} from '@chakra-ui/react';
 
-import { fonts } from "./lib/fonts";
-import { Button } from "./theme/button";
-
-import { theme as baseTheme } from "@portfolio/shared";
+import { theme as baseTheme } from '@portfolio/shared';
+import { fonts } from './lib/fonts';
+import { Button } from './theme/button';
 
 const Heading = defineStyleConfig({
   variants: {
     code: {
       fontFamily: fonts.notoSansMono.style.fontFamily,
-      color: "red.500",
-    },
-  },
+      color: 'red.500'
+    }
+  }
 });
 
 const overrides: ThemeOverride = {
   fonts: {
-    heading: fonts.inter.style.fontFamily,
+    heading: fonts.inter.style.fontFamily
   },
   components: {
     Heading,
-    Button,
-  },
+    Button
+  }
 };
 
 export const useBackgroundImage = () => {
   const { colorMode } = useChakraColorMode();
 
-  if (colorMode === "dark") {
+  if (colorMode === 'dark') {
     // Onyx Black #0f0f0f
     return "linear-gradient(to bottom, rgba(15, 15, 15, 0.93) 10%,rgba(15, 15, 15, 0.98) 70%), url('/images/background.jpg');";
   }

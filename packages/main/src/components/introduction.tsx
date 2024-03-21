@@ -3,9 +3,9 @@ import {
   HStack,
   Heading,
   Stack,
-  useColorModeValue,
-} from '@chakra-ui/react'
-import TypewriterComponent from 'typewriter-effect'
+  useColorModeValue
+} from '@chakra-ui/react';
+import TypewriterComponent from 'typewriter-effect';
 
 export const Introduction = (props: BoxProps) => {
   return (
@@ -44,10 +44,10 @@ export const Introduction = (props: BoxProps) => {
                     'Machine Learning',
                     'Generative AI',
                     'Distributed Systems',
-                    'React JS',
+                    'React JS'
                   ],
                   autoStart: true,
-                  loop: true,
+                  loop: true
                 }}
                 component="span"
               />
@@ -57,5 +57,5 @@ export const Introduction = (props: BoxProps) => {
         </Stack>
       </Stack>
     </HStack>
-  )
-}
+  );
+};

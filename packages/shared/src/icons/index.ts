@@ -1,1 +1,1 @@
-export { GoogleScholar } from "./google-scholar";
+export { GoogleScholar } from './google-scholar';

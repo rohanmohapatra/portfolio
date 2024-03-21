@@ -4,22 +4,22 @@ import {
   Heading,
   Button,
   Text,
-  useColorModeValue,
-} from '@chakra-ui/react'
-import { PiHandWavingBold } from 'react-icons/pi'
-import { useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+  useColorModeValue
+} from '@chakra-ui/react';
+import { PiHandWavingBold } from 'react-icons/pi';
+import { useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
-import { openUrl } from '../lib/utils'
+import { openUrl } from '../lib/utils';
 
-import { AnimatedBox } from './animated/animated-box'
+import { AnimatedBox } from './animated/animated-box';
 
 export const SayHello = () => {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: containerRef })
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: containerRef });
   const rotate = useTransform(scrollYProgress, [0, 1], ['60%', '0%'], {
-    clamp: true,
-  })
+    clamp: true
+  });
 
   return (
     <Stack h="full" w="full" spacing="5rem" pr="9rem">
@@ -55,5 +55,5 @@ export const SayHello = () => {
         </Button>
       </Stack>
     </Stack>
-  )
-}
+  );
+};

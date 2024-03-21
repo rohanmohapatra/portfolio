@@ -1,21 +1,21 @@
-import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
-import { useState } from 'react'
-import { pdfjs, Document, Thumbnail } from 'react-pdf'
+import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
+import { useState } from 'react';
+import { pdfjs, Document, Thumbnail } from 'react-pdf';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.js',
   import.meta.url
-).toString()
+).toString();
 
-type PDFFile = string | File | null
+type PDFFile = string | File | null;
 const options = {
   cMapUrl: '/cmaps/',
   standardFontDataUrl: '/standard_fonts/',
-  length: 1,
-}
+  length: 1
+};
 
 const PDF = ({ file, maxWidth }: { file: PDFFile; maxWidth: number }) => {
-  const [dimensions, setDimensions] = useState({ width: maxWidth, height: 0 })
+  const [dimensions, setDimensions] = useState({ width: maxWidth, height: 0 });
   return (
     <Flex height={dimensions.height} width="full" alignSelf="center">
       <Document file={file} options={options}>
@@ -59,7 +59,7 @@ const PDF = ({ file, maxWidth }: { file: PDFFile; maxWidth: number }) => {
         </Box>
       </Document>
     </Flex>
-  )
-}
+  );
+};
 
-export default PDF
+export default PDF;

@@ -8,32 +8,80 @@ import {
   Stack,
   StackProps,
   Tooltip,
-  useBreakpointValue,
-} from '@chakra-ui/react'
-import React from 'react'
+  useBreakpointValue
+} from '@chakra-ui/react';
+import React from 'react';
 import {
   FiGithub,
   FiInstagram,
   FiLinkedin,
   FiTwitter,
-  FiBook,
-} from 'react-icons/fi'
+  FiBook
+} from 'react-icons/fi';
 import {
   FaGithub,
   FaInstagram,
   FaLinkedin,
   FaPlus,
-  FaTwitter,
-} from 'react-icons/fa6'
+  FaTwitter
+} from 'react-icons/fa6';
 
-import { GoogleScholar } from '../icons/google-scholar'
-import { openUrl } from '../../lib/utils'
-import { Divider } from '../shared/divider'
+import { Divider } from '@portfolio/shared';
+import { openUrl } from '../../lib/utils';
+import { GoogleScholar } from '../icons/google-scholar';
+
+const IconMenu = () => {
+  return (
+    <Menu autoSelect={false}>
+      <MenuButton
+        as={IconButton}
+        aria-label="Icon"
+        icon={<Icon as={FaPlus} boxSize="1.5rem" />}
+        position="fixed"
+        bottom="3%"
+        right="5%"
+        isRound
+        size="md"
+      />
+      <MenuList minW="0" w="5rem">
+        <MenuItem
+          onClick={() =>
+            openUrl('https://www.linkedin.com/in/rohan-mohapatra/')
+          }
+        >
+          <Icon as={FaLinkedin} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+        <MenuItem onClick={() => openUrl('https://github.com/rohanmohapatra')}>
+          <Icon as={FaGithub} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+        <MenuItem
+          onClick={() =>
+            openUrl(
+              'https://scholar.google.com/citations?user=9a3mq_oAAAAJ&hl=en'
+            )
+          }
+        >
+          <Icon as={GoogleScholar} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+        <MenuItem
+          onClick={() => openUrl('https://www.instagram.com/monodimension')}
+        >
+          <Icon as={FaInstagram} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+        <MenuItem
+          onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
+        >
+          <Icon as={FaTwitter} color="red.500" boxSize="1.5rem" />
+        </MenuItem>
+      </MenuList>
+    </Menu>
+  );
+};
 
 export const IconBar: React.FC<StackProps> = (props) => {
-  const showMenu = useBreakpointValue({ base: true, lg: false })
+  const showMenu = useBreakpointValue({ base: true, lg: false });
   if (showMenu) {
-    return <IconMenu />
+    return <IconMenu />;
   }
   return (
     <Stack spacing="1rem" height="full" {...props}>
@@ -95,53 +143,5 @@ export const IconBar: React.FC<StackProps> = (props) => {
       </Tooltip>
       <Divider orientation="vertical" />
     </Stack>
-  )
-}
-
-const IconMenu = () => {
-  return (
-    <Menu autoSelect={false}>
-      <MenuButton
-        as={IconButton}
-        aria-label="Icon"
-        icon={<Icon as={FaPlus} boxSize="1.5rem" />}
-        position="fixed"
-        bottom="3%"
-        right="5%"
-        isRound
-        size="md"
-      />
-      <MenuList minW="0" w="5rem">
-        <MenuItem
-          onClick={() =>
-            openUrl('https://www.linkedin.com/in/rohan-mohapatra/')
-          }
-        >
-          <Icon as={FaLinkedin} color="red.500" boxSize="1.5rem" />
-        </MenuItem>
-        <MenuItem onClick={() => openUrl('https://github.com/rohanmohapatra')}>
-          <Icon as={FaGithub} color="red.500" boxSize="1.5rem" />
-        </MenuItem>
-        <MenuItem
-          onClick={() =>
-            openUrl(
-              'https://scholar.google.com/citations?user=9a3mq_oAAAAJ&hl=en'
-            )
-          }
-        >
-          <Icon as={GoogleScholar} color="red.500" boxSize="1.5rem" />
-        </MenuItem>
-        <MenuItem
-          onClick={() => openUrl('https://www.instagram.com/monodimension')}
-        >
-          <Icon as={FaInstagram} color="red.500" boxSize="1.5rem" />
-        </MenuItem>
-        <MenuItem
-          onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
-        >
-          <Icon as={FaTwitter} color="red.500" boxSize="1.5rem" />
-        </MenuItem>
-      </MenuList>
-    </Menu>
-  )
-}
+  );
+};

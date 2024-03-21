@@ -1,5 +1,5 @@
-import React from 'react'
-import { Icon, IconProps } from '@chakra-ui/react'
+import React from 'react';
+import { Icon, IconProps } from '@chakra-ui/react';
 
 export const FiGoogleScholar = (props: IconProps) => {
   return (
@@ -27,5 +27,5 @@ export const FiGoogleScholar = (props: IconProps) => {
         stroke-linecap="round"
       />
     </Icon>
-  )
-}
+  );
+};

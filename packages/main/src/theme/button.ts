@@ -1,6 +1,6 @@
-import { StyleFunctionProps, defineStyleConfig } from '@chakra-ui/react'
+import { StyleFunctionProps, defineStyleConfig } from '@chakra-ui/react';
 
-import { fonts } from '../lib/fonts'
+import { fonts } from '../lib/fonts';
 
 export const Button = defineStyleConfig({
   variants: {
@@ -11,7 +11,7 @@ export const Button = defineStyleConfig({
       fontFamily: fonts.notoSansMono.style.fontFamily,
       border: '1px solid',
       borderColor: 'red.500',
-      color: 'red.500',
+      color: 'red.500'
     },
     nav: (props: StyleFunctionProps) => ({
       position: 'relative',
@@ -20,8 +20,8 @@ export const Button = defineStyleConfig({
       color: props.colorMode === 'light' ? 'gray.1000' : 'white',
       _hover: {
         _before: {
-          transform: 'scaleX(1)',
-        },
+          transform: 'scaleX(1)'
+        }
       },
       _active: {},
       _before: {
@@ -34,8 +34,8 @@ export const Button = defineStyleConfig({
         height: '0.1rem',
         bottom: 0,
         left: 0,
-        transition: 'transform 0.3s ease',
-      },
-    }),
-  },
-})
+        transition: 'transform 0.3s ease'
+      }
+    })
+  }
+});

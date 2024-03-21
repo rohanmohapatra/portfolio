@@ -1,4 +1,4 @@
-import '@/styles/carousel.module.css'
+import '@/styles/carousel.module.css';
 import {
   Stack,
   HStack,
@@ -9,51 +9,51 @@ import {
   Image,
   useColorModeValue,
   Button,
-  Icon,
-} from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
-import Slider, { Settings } from 'react-slick'
-import { FaCode, FaCodeBranch, FaStar } from 'react-icons/fa6'
-import axios from 'axios'
-import { FiChevronsLeft, FiChevronsRight, FiGithub } from 'react-icons/fi'
+  Icon
+} from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import Slider, { Settings } from 'react-slick';
+import { FaCode, FaCodeBranch, FaStar } from 'react-icons/fa6';
+import axios from 'axios';
+import { FiChevronsLeft, FiChevronsRight, FiGithub } from 'react-icons/fi';
 
-import { backendApi, githubApi } from '../lib/constants'
-import { openUrl } from '../lib/utils'
+import { backendApi, githubApi } from '../lib/constants';
+import { openUrl } from '../lib/utils';
 
-import { Divider } from './shared/divider'
+import { Divider } from './shared/divider';
 
 const processProjects = async () => {
-  let response = await axios(`${backendApi}/github-access-token`)
-  const githubToken = response.data.accessToken
+  let response = await axios(`${backendApi}/github-access-token`);
+  const githubToken = response.data.accessToken;
 
-  response = await axios(`${backendApi}/projects`)
-  const requiredProjects = response.data.projects
+  response = await axios(`${backendApi}/projects`);
+  const requiredProjects = response.data.projects;
 
   response = await axios.get(githubApi, {
     headers: {
       Authorization: `Bearer ${githubToken}`,
-      Accept: 'application/vnd.github+json',
-    },
-  })
+      Accept: 'application/vnd.github+json'
+    }
+  });
 
-  let projectsData: Project[] = response.data
+  let projectsData: Project[] = response.data;
   projectsData = projectsData.filter((project) =>
     requiredProjects.includes(project.name)
-  )
-  projectsData.sort((a, b) => b.stargazers_count - a.stargazers_count)
+  );
+  projectsData.sort((a, b) => b.stargazers_count - a.stargazers_count);
   //   .sort((a, b) => b.forks_count - a.forks_count);
-  return projectsData
-}
+  return projectsData;
+};
 
 interface Project {
-  id: number
-  name: string
-  language: string
-  stargazers_count: number
-  forks_count: number
-  html_url: string
-  has_pages: boolean
-  description?: string
+  id: number;
+  name: string;
+  language: string;
+  stargazers_count: number;
+  forks_count: number;
+  html_url: string;
+  has_pages: boolean;
+  description?: string;
 }
 
 const Project = ({
@@ -63,7 +63,7 @@ const Project = ({
   stargazers_count,
   forks_count,
   boxProps,
-  description,
+  description
 }: Project & { boxProps: BoxProps }) => {
   return (
     <Stack {...boxProps} w="24rem" align="center">
@@ -115,11 +115,11 @@ const Project = ({
         </Heading>
       </Stack>
     </Stack>
-  )
-}
+  );
+};
 
 const ProjectShowcase = ({ projects }: { projects: Project[] }) => {
-  const [imageIndex, setImageIndex] = useState(0)
+  const [imageIndex, setImageIndex] = useState(0);
 
   const NextArrow = ({ onClick }: BoxProps) => {
     return (
@@ -133,8 +133,8 @@ const ProjectShowcase = ({ projects }: { projects: Project[] }) => {
       >
         <Icon as={FiChevronsRight} boxSize="3rem" rounded="full" bg="red.500" />
       </Box>
-    )
-  }
+    );
+  };
 
   const PrevArrow = ({ onClick }: BoxProps) => {
     return (
@@ -148,8 +148,8 @@ const ProjectShowcase = ({ projects }: { projects: Project[] }) => {
       >
         <Icon as={FiChevronsLeft} boxSize="3rem" rounded="full" bg="red.500" />
       </Box>
-    )
-  }
+    );
+  };
 
   const settings: Settings = {
     infinite: true,
@@ -159,8 +159,8 @@ const ProjectShowcase = ({ projects }: { projects: Project[] }) => {
     centerPadding: '0px',
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    beforeChange: (current, next) => setImageIndex(next),
-  }
+    beforeChange: (current, next) => setImageIndex(next)
+  };
 
   return (
     <Box width="100%" height="300px">
@@ -173,7 +173,7 @@ const ProjectShowcase = ({ projects }: { projects: Project[] }) => {
             sx={{
               justifyContent: 'center !important',
               alignItems: 'center !important',
-              display: 'flex !important',
+              display: 'flex !important'
             }}
           >
             <Project
@@ -183,7 +183,7 @@ const ProjectShowcase = ({ projects }: { projects: Project[] }) => {
                   ? { transform: 'scale(1.1)', opacity: 1 }
                   : { transform: 'scale(0.5)', opacity: 0.8 }),
                 transition: 'transform 300ms',
-                marginTop: '1.5rem',
+                marginTop: '1.5rem'
               }}
               {...project}
             ></Project>
@@ -191,16 +191,16 @@ const ProjectShowcase = ({ projects }: { projects: Project[] }) => {
         ))}
       </Slider>
     </Box>
-  )
-}
+  );
+};
 
 export const Projects = (props: BoxProps) => {
-  const [projects, setProjects] = useState<Project[]>([])
+  const [projects, setProjects] = useState<Project[]>([]);
   // eslint-disable-next-line no-unused-vars
-  const projectsLength = useBreakpointValue({ base: 5, md: 'full' })
+  const projectsLength = useBreakpointValue({ base: 5, md: 'full' });
   useEffect(() => {
-    processProjects().then((projectsData) => setProjects(projectsData))
-  }, [])
+    processProjects().then((projectsData) => setProjects(projectsData));
+  }, []);
   return (
     <Stack h="full" w="full" spacing="8rem" pr="9rem" {...props}>
       <HStack w="60%" alignSelf="center">
@@ -220,5 +220,5 @@ export const Projects = (props: BoxProps) => {
         </Button>
       </Stack>
     </Stack>
-  )
-}
+  );
+};

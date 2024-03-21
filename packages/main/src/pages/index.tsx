@@ -1,11 +1,11 @@
-import Head from 'next/head'
-import { Heading, Stack } from '@chakra-ui/react'
+import Head from 'next/head';
+import { Heading, Stack } from '@chakra-ui/react';
 
-import { Introduction } from '../components/introduction'
-import { About } from '../components/about'
-import { Publications } from '../components/publications'
-import { Projects } from '../components/projects'
-import { SayHello } from '../components/say-hello'
+import { Introduction } from '../components/introduction';
+import { About } from '../components/about';
+import { Publications } from '../components/publications';
+import { Projects } from '../components/projects';
+import { SayHello } from '../components/say-hello';
 
 export default function Home() {
   return (
@@ -30,5 +30,5 @@ export default function Home() {
         </Stack>
       </main>
     </>
-  )
+  );
 }

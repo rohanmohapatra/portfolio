@@ -1,14 +1,14 @@
-import "@/styles/globals.css";
-import { ChakraProvider } from "@chakra-ui/react";
-import type { AppProps } from "next/app";
-import Head from "next/head";
+import '@/styles/globals.css';
+import { ChakraProvider } from '@chakra-ui/react';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
-import { Layout } from "../components/layout";
-import { theme } from "../theme";
-import { fonts } from "../lib/fonts";
+import { Layout } from '../components/layout';
+import { theme } from '../theme';
+import { fonts } from '../lib/fonts';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 if (!Array.prototype.unique) {
   Array.prototype.unique = function () {
