@@ -1,0 +1,63 @@
+name: Deploy to Github Pages
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: volta-cli/action@v4
+      - name: Install Packages
+        run: yarn
+      - name: Run Lint
+        run: yarn lint
+      - name: Initialize Secrets File
+        run: |
+          rm packages/main/.env
+          echo "${{ secrets.ENV_FILE }}" > packages/main/.env
+      - name: Build portfolio
+        run: yarn build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: build/
+          if-no-files-found: error
+  
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Checkout Deployment Repository
+        uses: actions/checkout@v4
+        with:
+          repository: rohanmohapatra/rohanmohapatra.github.io
+          ref: master
+          path: deploy
+          token:  ${{ secrets.PAT_TOKEN }}
+      - name: Change cwd and clean up repository
+        working-directory: ./deploy
+        run: |
+          git rm -rf .
+      - uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ./deploy
+      - working-directory: ./deploy
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add --all
+          git commit -m "Deploy website - based on ${{ github.sha }}"
+          git push --force origin HEAD
+          echo "new_page_url=https://rohanmohapatra.github.io/" >> $GITHUB_OUTPUT
