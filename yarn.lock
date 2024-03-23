@@ -4200,15 +4200,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:^14.1.4":
-  version: 14.1.4
-  resolution: "@next/font@npm:14.1.4"
-  peerDependencies:
-    next: "*"
-  checksum: 10c0/b6479dbf176e8102e228350d3f28546be1fe3305cc6bf14a8660e2c6cf84ef0044cd5afa3e7c1fac2f85362fb6d705459aef4768c3034d101deb2391a8843c9d
-  languageName: node
-  linkType: hard
-
 "@next/swc-darwin-arm64@npm:14.1.3":
   version: 14.1.3
   resolution: "@next/swc-darwin-arm64@npm:14.1.3"
@@ -4791,7 +4782,6 @@ __metadata:
     "@chakra-ui/react": "npm:^2.8.2"
     "@emotion/react": "npm:^11.11.4"
     "@emotion/styled": "npm:^11.11.0"
-    "@next/font": "npm:^14.1.4"
     "@vitejs/plugin-react": "npm:^4.2.1"
     framer-motion: "npm:^11.0.14"
     react: "npm:^18.2.0"
