@@ -17,8 +17,8 @@ const config: Config = {
   onBrokenMarkdownLinks: 'warn',
 
   stylesheets: [
-    "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap')",
-    "@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap')"
+    'https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap',
+    'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap'
   ],
 
   presets: [
@@ -43,11 +43,12 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'images/avataaars.png',
     navbar: {
       title: "Rohan's Blog",
       logo: {
-        src: 'images/avataaars.png'
+        src: 'images/avataaars.png',
+        srcDark: 'images/avataaars.png'
       },
       items: []
     },
