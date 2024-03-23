@@ -5,7 +5,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   // Netlify Stuff
   'https://v3-rohanmohapatra-portfolio.vercel.app',
-  'https://v2-rohanmohapatra-portfolio.vercel.app',
+  'https://v2-rohanmohapatra-portfolio.vercel.app'
 ];
 
 const corsOptions = {
