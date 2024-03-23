@@ -34,8 +34,20 @@ jobs:
     environment:
       name: github-pages
     steps:
+      - name: Checkout Deployment Repository
+        uses: actions/checkout@v4
+        with:
+          repository: rohanmohapatra/rohanmohapatra.github.io
+          ref: master
+          path: deploy
+      - name: Change cwd and clean up repository
+        working-directory: ./deploy
+        run: |
+          git rm -rf .
       - uses: actions/download-artifact@v4
+        working-directory: ./deploy
         with:
           name: github-pages
           path: .
-      - run: ls -R
+      - working-directory: ./deploy
+        run: ls -al
