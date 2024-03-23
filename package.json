@@ -25,7 +25,7 @@
   },
   "private": true,
   "scripts": {
-    "build": "lerna run build --scope=@portfolio/main && lerna run build --scope=@portfolio/blog",
+    "build": "lerna run build --scope=@portfolio/shared && lerna run build --scope=@portfolio/main && lerna run build --scope=@portfolio/blog",
     "dev:api": "lerna run dev --scope=@portfolio/api",
     "dev:blog": "lerna run dev --scope=@portfolio/blog",
     "dev:main": "lerna run dev --scope=@portfolio/main",
