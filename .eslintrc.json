@@ -1,50 +1,17 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": ["react", "@typescript-eslint", "simple-import-sort", "import", "prettier"],
-  "rules": {
-    "camelcase": "warn",
-    "no-unused-vars": "warn",
-    "react/require-default-props": "off",
-    "react/no-unused-prop-types": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "import/first": "error",
-    "import/newline-after-import": "error",
-    "import/no-duplicates": "error",
-    "import/prefer-default-export": "off",
-    "react/function-component-definition": "off",
-    "react/jsx-props-no-spreading": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "object-curly-newline": "off",
-    "prettier/prettier": ["error"]
-  },
+  "root": true,
+  "plugins": ["prettier", "import"],
+  "extends": ["prettier", "next"],
   "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
-      }
+    "next": {
+      "rootDir": ["packages/main/", "packages/api/"]
     }
+  },
+  "rules": {
+    "no-console": "warn",
+    "prettier/prettier": "error",
+    "no-unused-vars": "error",
+    "import/order": ["error"],
+    "import/exports-last": "error"
   }
 }

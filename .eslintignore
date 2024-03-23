@@ -1,1 +1,3 @@
-src/theme/*
+node_modules
+build
+dist
