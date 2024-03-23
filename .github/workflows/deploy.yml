@@ -22,9 +22,9 @@ jobs:
       - name: Build portfolio
         run: yarn build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          path: build
+          path: build/
   
   deploy:
     needs: build
@@ -35,5 +35,5 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: github-pages
-          path: ./page
-      - run: ls -al page
+          path: .
+      - run: ls -R
