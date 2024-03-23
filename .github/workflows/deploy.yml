@@ -19,6 +19,10 @@ jobs:
         run: yarn
       - name: Run Lint
         run: yarn lint
+      - name: Initialize Secrets File
+        run: |
+          rm packages/main/.env
+          echo "${{ secrets.ENV_FILE }}" > packages/main/.env
       - name: Build portfolio
         run: yarn build
       - name: Upload artifact
