@@ -25,10 +25,15 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: build
-          if-no-files-found: error
   
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: page
+          path: .
       - run: ls -al
