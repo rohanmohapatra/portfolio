@@ -49,4 +49,8 @@ jobs:
           name: github-pages
           path: ./deploy
       - working-directory: ./deploy
-        run: ls -al
+        run: |
+          git add --all
+          git commit -m "Deploy website - based on ${{ github.sha }}"
+          git push --force origin HEAD
+          echo "new_page_url=https://rohanmohapatra.github.io/" >> $GITHUB_OUTPUT
