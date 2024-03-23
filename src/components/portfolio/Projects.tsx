@@ -96,7 +96,7 @@ export const Projects: React.FC<BoxProps> = (props) => {
 
   useEffect(() => {
     axios.get(backendApi).then((result) => {
-      const githubToken = result.data.access_token;
+      const githubToken = result.data.accessToken;
       const url = 'https://api.github.com/user/repos?per_page=100';
       axios
         .get(url, {
