@@ -36,4 +36,4 @@ jobs:
         with:
           name: github-pages
           path: ./page
-      - run: ls -al
+      - run: ls -al page
