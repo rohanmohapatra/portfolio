@@ -1,0 +1,30 @@
+name: Deploy to Github Pages
+
+on:
+  push:
+    branches: ["ci-test"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: volta-cli/action@v4
+      - name: Install Packages
+        run: yarn
+      - name: Run Lint
+        run: yarn lint
+      - name: Build portfolio
+        run: yarn build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+  
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls -al
