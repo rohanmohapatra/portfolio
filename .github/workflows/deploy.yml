@@ -32,8 +32,8 @@ jobs:
     environment:
       name: github-pages
     steps:
-      - uses: actions/download-artifact@master
+      - uses: actions/download-artifact@v4
         with:
-          name: page
+          name: github-pages
           path: .
       - run: ls -al
