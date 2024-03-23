@@ -8,8 +8,12 @@ import {
 import { theme as baseTheme } from '@portfolio/shared';
 import { fonts } from './lib/fonts';
 import { Button } from './theme/button';
+import { Modal } from './theme/modal';
 
 const Heading = defineStyleConfig({
+  baseStyle: {
+    fontFamily: fonts.inter.style.fontFamily
+  },
   variants: {
     code: {
       fontFamily: fonts.notoSansMono.style.fontFamily,
@@ -24,7 +28,8 @@ const overrides: ThemeOverride = {
   },
   components: {
     Heading,
-    Button
+    Button,
+    Modal
   }
 };
 

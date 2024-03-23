@@ -9,7 +9,7 @@ import { PiHandWavingBold } from 'react-icons/pi';
 import { useRouter } from 'next/router';
 import { ColorModeSwitch } from '@portfolio/shared';
 
-import { openUrl } from '../../lib/utils';
+import { openUrl, openUrlInSameTab } from '../../lib/utils';
 
 export const Navbar = () => {
   const router = useRouter();
@@ -71,7 +71,7 @@ export const Navbar = () => {
               {item.name}
             </Button>
           ))}
-          <Button variant="nav" onClick={() => window.open('/blog')?.focus()}>
+          <Button variant="nav" onClick={() => openUrlInSameTab('/blog')}>
             Blog
           </Button>
         </HStack>

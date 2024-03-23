@@ -4,15 +4,17 @@ import {
   Heading,
   Button,
   Text,
-  useColorModeValue
+  useColorModeValue,
+  useDisclosure
 } from '@chakra-ui/react';
-import { PiHandWavingBold } from 'react-icons/pi';
+import { PiClockCounterClockwiseBold, PiHandWavingBold } from 'react-icons/pi';
 import { useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
 import { openUrl } from '../lib/utils';
 
 import { AnimatedBox } from './animated/animated-box';
+import { GoBackInTimeModal } from './go-back-in-time-modal';
 
 export const SayHello = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,6 +22,8 @@ export const SayHello = () => {
   const rotate = useTransform(scrollYProgress, [0, 1], ['60%', '0%'], {
     clamp: true
   });
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Stack h="full" w="full" spacing="5rem" pr="9rem">
@@ -46,13 +50,25 @@ export const SayHello = () => {
           Whether you have a question or just want to say hi, {`I'll`} try my
           best to get back to you!
         </Text>
-        <Button
-          variant="outline"
-          rightIcon={<PiHandWavingBold fontSize="1.5rem" />}
-          onClick={() => openUrl('mailto:rohannmohapatra@gmail.com')}
-        >
-          Say hello!
-        </Button>
+        <HStack>
+          <Button
+            variant="outline"
+            rightIcon={<PiHandWavingBold fontSize="1.5rem" />}
+            onClick={() => openUrl('mailto:rohannmohapatra@gmail.com')}
+          >
+            Say hello!
+          </Button>
+          <Button
+            variant="outline"
+            bg="red.500"
+            color={useColorModeValue('white', 'gray.1000')}
+            rightIcon={<PiClockCounterClockwiseBold fontSize="1.5rem" />}
+            onClick={onOpen}
+          >
+            Go back in time
+          </Button>
+          <GoBackInTimeModal isOpen={isOpen} onClose={onClose} />
+        </HStack>
       </Stack>
     </Stack>
   );

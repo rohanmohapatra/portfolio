@@ -2,10 +2,10 @@ import { Box } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { useRouter } from 'next/router';
 
+import { IconBar } from '@portfolio/shared';
 import { useBackgroundImage } from '../theme';
 
 import { Navbar } from './layout/navbar';
-import { IconBar } from './layout/iconbar';
 
 interface LayoutProps {
   children: ReactNode;

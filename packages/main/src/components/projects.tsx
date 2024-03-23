@@ -215,7 +215,11 @@ export const Projects = (props: BoxProps) => {
       </HStack>
       <ProjectShowcase projects={projects} />
       <Stack align="center" w="full">
-        <Button variant="outline" rightIcon={<FiGithub />}>
+        <Button
+          variant="outline"
+          rightIcon={<FiGithub />}
+          onClick={() => openUrl('https://github.com/rohanmohapatra')}
+        >
           View More on
         </Button>
       </Stack>

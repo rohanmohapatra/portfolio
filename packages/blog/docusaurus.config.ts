@@ -17,7 +17,8 @@ const config: Config = {
   onBrokenMarkdownLinks: 'warn',
 
   stylesheets: [
-    "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap')"
+    "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap')",
+    "@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap')"
   ],
 
   presets: [

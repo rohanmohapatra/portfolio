@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
             :root {
               --font-heading: ${fonts.inter.style.fontFamily};
               --font-mono: ${fonts.notoSansMono.style.fontFamily};
-            }
+            },
           `}
         </style>
       </Head>

@@ -113,3 +113,18 @@ a {
   width: 100%;
 }
 
+.print-agreement #print-info {
+  display: flex;
+  flex-direction: row;
+  font-size: 9pt;
+}
+
+.print-agreement #print-info-content {
+  padding-top: 2pt;
+  padding-left: 2pt;
+  width: 75%;
+}
+
+.print-agreement .chakra-heading {
+  font-size: 10pt;
+}

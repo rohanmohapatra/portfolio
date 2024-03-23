@@ -1,4 +1,6 @@
 import {
+  Box,
+  Button,
   Stack,
   Heading,
   Divider,
@@ -7,11 +9,15 @@ import {
   Avatar,
   HStack,
   Text,
-  useColorModeValue
+  useColorModeValue,
+  Icon
 } from '@chakra-ui/react';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa6';
 import { FaGlobeAmericas } from 'react-icons/fa';
+import { PiPrinterBold } from 'react-icons/pi';
 import Head from 'next/head';
+import ReactToPrint from 'react-to-print';
+import { useRef } from 'react';
 
 const Title = ({ title, date }: { title: string; date: string }) => {
   return (
@@ -56,7 +62,7 @@ const ContactInformation = (props: {
   );
 };
 
-const Information = () => {
+const Information = (props: { printRef: any }) => {
   return (
     <Stack width={['full', '50rem']} bg="red.500" color="white">
       <Stack
@@ -65,6 +71,7 @@ const Information = () => {
         pt="6rem"
         justify="center"
         alignItems="center"
+        textAlign="center"
       >
         <Avatar
           boxSize="14rem"
@@ -78,6 +85,25 @@ const Information = () => {
           M.S. Computer Science @ San Jose State University
         </Text>
         <Text color="whiteAlpha.900">Research Scientist @ MICoSys Lab</Text>
+
+        <ReactToPrint
+          bodyClass="print-agreement"
+          content={() => props.printRef.current}
+          trigger={() => (
+            <Box>
+              <Button
+                variant="outline"
+                fontSize="sm"
+                leftIcon={<Icon as={PiPrinterBold} />}
+                color="white"
+                borderColor="white"
+                px="0.5rem"
+              >
+                Print
+              </Button>
+            </Box>
+          )}
+        />
       </Stack>
       <Stack p="2rem">
         <ContactInformation type="email" value="rohan.mohapatra@sjsu.edu" />
@@ -151,19 +177,65 @@ const Information = () => {
   );
 };
 
+const Awards = () => {
+  const headingColor = useColorModeValue('blackAlpha.600', 'whiteAlpha.800');
+  return (
+    <Stack spacing="2">
+      <Stack spacing="0.5">
+        <Title title="Bravo Award from GoTo Inc." date="2022" />
+        <Heading size="sm" color={headingColor}>
+          Awardee
+        </Heading>
+      </Stack>
+      <Stack spacing="0.5">
+        <Title
+          title="Professor CNR Rao Merit Scholarship at PES University"
+          date="2016-2020"
+        />
+        <Heading size="sm" color={headingColor}>
+          Awardee
+        </Heading>
+      </Stack>
+
+      <Stack spacing="0.5">
+        <Title
+          title="Professor M R Doreswamy Merit Scholarship at PES University"
+          date="2016-2020"
+        />
+        <Heading size="sm" color={headingColor}>
+          Awardee
+        </Heading>
+      </Stack>
+
+      <Stack spacing="0.5">
+        <Title
+          title="Distinction Award for all semesters at PES University"
+          date="2016-2020"
+        />
+        <Heading size="sm" color={headingColor}>
+          Awardee
+        </Heading>
+      </Stack>
+    </Stack>
+  );
+};
+
 const OnlineResume = () => {
+  const headingColor = useColorModeValue('blackAlpha.600', 'whiteAlpha.800');
+  const ref = useRef<HTMLDivElement | null>(null);
   return (
     <>
       <Head>
         <title>Rohan Mohapatra | Résumé</title>
       </Head>
-      <Stack direction={['column', 'row']}>
-        <Information />
+      <Stack direction={['column', 'row']} ref={ref} id="print-info">
+        <Information printRef={ref} />
         <Stack
           p="2rem"
           pt="5rem"
           pr="8rem"
           bg={useColorModeValue('white', 'gray.1000')}
+          id="print-info-content"
         >
           <Heading size="lg" textTransform="uppercase" pt="2rem">
             Education
@@ -171,7 +243,7 @@ const OnlineResume = () => {
           <Divider bg="red.500" w="40rem" opacity="1" height="0.2rem" />
           <Stack spacing="0.5">
             <Title title="M.S. Computer Science" date="August 2022 - Present" />
-            <Heading size="sm" color="blackAlpha.600">
+            <Heading size="sm" color={headingColor}>
               San Jose State University | San Jose, California
             </Heading>
             <UnorderedList pl="3rem">
@@ -187,7 +259,7 @@ const OnlineResume = () => {
               title="B.Tech. Computer Science and Engineering"
               date="August 2016 - May 2020"
             />
-            <Heading size="sm" color="blackAlpha.600">
+            <Heading size="sm" color={headingColor}>
               PES University | Bengaluru, India
             </Heading>
             <UnorderedList pl="3rem">
@@ -207,7 +279,7 @@ const OnlineResume = () => {
                 title="Research Scientist "
                 date="September 2022 - Present"
               />
-              <Heading size="sm" color="blackAlpha.600">
+              <Heading size="sm" color={headingColor}>
                 MICoSys Lab, San Jose State University | San Jose, CA
               </Heading>
               <UnorderedList pl="3rem">
@@ -231,7 +303,7 @@ const OnlineResume = () => {
                 title="Software Engineer - II"
                 date="October 2021 - August 2022"
               />
-              <Heading size="sm" color="blackAlpha.600">
+              <Heading size="sm" color={headingColor}>
                 GoTo Inc. | Bengaluru, India
               </Heading>
               <UnorderedList pl="3rem">
@@ -262,7 +334,7 @@ const OnlineResume = () => {
                 title="Software Engineer - I"
                 date="August 2020 - September 2021"
               />
-              <Heading size="sm" color="blackAlpha.600">
+              <Heading size="sm" color={headingColor}>
                 GoTo Inc. | Bengaluru, India
               </Heading>
               <UnorderedList pl="3rem">
@@ -293,7 +365,7 @@ const OnlineResume = () => {
                 title="Machine Learning Intern"
                 date="June 2023 - August 2023"
               />
-              <Heading size="sm" color="blackAlpha.600">
+              <Heading size="sm" color={headingColor}>
                 Spicyfy Ventures LLC | Irving, TX (Remote)
               </Heading>
               <UnorderedList pl="3rem">
@@ -313,7 +385,7 @@ const OnlineResume = () => {
                 title="Software Engineering Intern"
                 date="January 2020 - July 2020"
               />
-              <Heading size="sm" color="blackAlpha.600">
+              <Heading size="sm" color={headingColor}>
                 LogMeIn, Inc. | Bengaluru, India
               </Heading>
               <UnorderedList pl="3rem">
@@ -335,7 +407,7 @@ const OnlineResume = () => {
                 title="Machine Learning Intern"
                 date="June 2019 - August 2019"
               />
-              <Heading size="sm" color="blackAlpha.600">
+              <Heading size="sm" color={headingColor}>
                 Itron India Private Limited | Bengaluru, India
               </Heading>
               <UnorderedList pl="3rem">
@@ -357,6 +429,7 @@ const OnlineResume = () => {
             Awards
           </Heading>
           <Divider bg="red.500" w="40rem" opacity="1" height="0.2rem" />
+          <Awards />
         </Stack>
       </Stack>
     </>

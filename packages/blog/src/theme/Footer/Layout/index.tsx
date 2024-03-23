@@ -6,7 +6,7 @@ export default function LayoutWrapper(props) {
   return (
     <Stack w="full" align="center" pt="2rem" pl="1rem">
       <Heading
-        fontFamily="Noto Sans Mono"
+        fontFamily="Noto Sans Mono, mono-space"
         fontWeight="700"
         color="var(--ifm-color-primary)"
         size="sm"
