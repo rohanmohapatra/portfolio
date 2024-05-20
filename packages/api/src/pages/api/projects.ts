@@ -10,6 +10,7 @@ export default function handler(
 ) {
   res.status(200).json({
     projects: [
+      'motorsports-app',
       'hdbscan-cpp',
       'torchswarm',
       'kafka-table',
