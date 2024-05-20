@@ -11,13 +11,13 @@ import {
   useBreakpointValue
 } from '@chakra-ui/react';
 import React from 'react';
+
 import {
-  FiGithub,
-  FiInstagram,
-  FiLinkedin,
-  FiTwitter,
-  FiBook
-} from 'react-icons/fi';
+  PiGithubLogo,
+  PiLinkedinLogo,
+  PiInstagramLogo,
+  PiTwitterLogo
+} from 'react-icons/pi';
 import {
   FaGithub,
   FaInstagram,
@@ -28,6 +28,7 @@ import {
 
 import { GoogleScholar } from '../icons/google-scholar';
 import { openUrl } from '../lib/open-url';
+import { PiGoogleScholarLogo } from '../icons';
 import { Divider } from './divider';
 
 const IconMenu = () => {
@@ -90,7 +91,7 @@ export const IconBar: React.FC<StackProps> = (props) => {
           aria-label="Linked In"
           variant="ghost"
           color="red.500"
-          icon={<Icon as={FiLinkedin} boxSize="1.5rem" />}
+          icon={<Icon as={PiLinkedinLogo} boxSize="2rem" />}
           onClick={() =>
             openUrl('https://www.linkedin.com/in/rohan-mohapatra/')
           }
@@ -101,7 +102,7 @@ export const IconBar: React.FC<StackProps> = (props) => {
           aria-label="Github"
           variant="ghost"
           color="red.500"
-          icon={<Icon as={FiGithub} boxSize="1.5rem" />}
+          icon={<Icon as={PiGithubLogo} boxSize="2rem" />}
           onClick={() => openUrl('https://github.com/rohanmohapatra')}
         />
       </Tooltip>
@@ -115,7 +116,7 @@ export const IconBar: React.FC<StackProps> = (props) => {
           aria-label="Google Scholar"
           variant="ghost"
           color="red.500"
-          icon={<Icon as={FiBook} boxSize="1.5rem" />}
+          icon={<Icon as={PiGoogleScholarLogo} boxSize="2rem" />}
           onClick={() =>
             openUrl(
               'https://scholar.google.com/citations?user=9a3mq_oAAAAJ&hl=en'
@@ -128,7 +129,7 @@ export const IconBar: React.FC<StackProps> = (props) => {
           aria-label="Instagram"
           variant="ghost"
           color="red.500"
-          icon={<Icon as={FiInstagram} boxSize="1.5rem" />}
+          icon={<Icon as={PiInstagramLogo} boxSize="2rem" />}
           onClick={() => openUrl('https://www.instagram.com/monodimension')}
         />
       </Tooltip>
@@ -137,7 +138,7 @@ export const IconBar: React.FC<StackProps> = (props) => {
           aria-label="Twitter"
           variant="ghost"
           color="red.500"
-          icon={<Icon as={FiTwitter} boxSize="1.5rem" />}
+          icon={<Icon as={PiTwitterLogo} boxSize="2rem" />}
           onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
         />
       </Tooltip>
