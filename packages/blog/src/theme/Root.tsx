@@ -19,7 +19,7 @@ const theme = extendTheme(
 const Root = ({ children }) => {
   return (
     <ChakraProvider resetCSS={true} theme={theme}>
-      <IconBar position="fixed" top="50%" left="2%" />
+      <IconBar position="fixed" top="40%" left="2%" />
       {children}
     </ChakraProvider>
   );
