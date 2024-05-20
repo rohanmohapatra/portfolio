@@ -15,7 +15,6 @@ export const Layout = ({ children }: LayoutProps) => {
   const backgroundImage = useBackgroundImage();
   const router = useRouter();
   const showIconbar = !(router.pathname === '/resume');
-  console.log(router.pathname);
   return (
     <Box
       backgroundImage={backgroundImage}
@@ -23,7 +22,7 @@ export const Layout = ({ children }: LayoutProps) => {
       backgroundAttachment="fixed"
       backgroundSize="cover"
     >
-      {showIconbar && <IconBar position="fixed" top="50%" left="2%" />}
+      {showIconbar && <IconBar position="fixed" top="40%" left="2%" />}
       <Navbar />
       {children}
     </Box>

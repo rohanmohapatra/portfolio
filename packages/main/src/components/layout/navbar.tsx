@@ -5,7 +5,7 @@ import {
   Image,
   useColorModeValue
 } from '@chakra-ui/react';
-import { PiHandWavingBold } from 'react-icons/pi';
+import { PiHandWavingDuotone } from 'react-icons/pi';
 import { useRouter } from 'next/router';
 import { ColorModeSwitch } from '@portfolio/shared';
 
@@ -80,7 +80,7 @@ export const Navbar = () => {
           <Button
             size="md"
             variant="nav"
-            rightIcon={<PiHandWavingBold fontSize="1.2rem" />}
+            rightIcon={<PiHandWavingDuotone fontSize="1.2rem" />}
             onClick={() => openUrl('mailto:rohannmohapatra@gmail.com')}
           >
             Say Hello!

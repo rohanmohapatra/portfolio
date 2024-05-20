@@ -7,7 +7,10 @@ import {
   useColorModeValue,
   useDisclosure
 } from '@chakra-ui/react';
-import { PiClockCounterClockwiseBold, PiHandWavingBold } from 'react-icons/pi';
+import {
+  PiClockCounterClockwiseBold,
+  PiHandWavingDuotone
+} from 'react-icons/pi';
 import { useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -53,7 +56,7 @@ export const SayHello = () => {
         <HStack>
           <Button
             variant="outline"
-            rightIcon={<PiHandWavingBold fontSize="1.5rem" />}
+            rightIcon={<PiHandWavingDuotone fontSize="1.5rem" />}
             onClick={() => openUrl('mailto:rohannmohapatra@gmail.com')}
           >
             Say hello!

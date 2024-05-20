@@ -15,7 +15,8 @@ import { useEffect, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
 import { FaCode, FaCodeBranch, FaStar } from 'react-icons/fa6';
 import axios from 'axios';
-import { FiChevronsLeft, FiChevronsRight, FiGithub } from 'react-icons/fi';
+import { FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
+import { PiGithubLogo } from 'react-icons/pi';
 
 import { backendApi, githubApi } from '../lib/constants';
 import { openUrl } from '../lib/utils';
@@ -217,7 +218,7 @@ export const Projects = (props: BoxProps) => {
       <Stack align="center" w="full">
         <Button
           variant="outline"
-          rightIcon={<FiGithub />}
+          rightIcon={<Icon as={PiGithubLogo} boxSize="1.5rem" />}
           onClick={() => openUrl('https://github.com/rohanmohapatra')}
         >
           View More on

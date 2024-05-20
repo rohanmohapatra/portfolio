@@ -18,6 +18,7 @@ import { PiPrinterBold } from 'react-icons/pi';
 import Head from 'next/head';
 import ReactToPrint from 'react-to-print';
 import { useRef } from 'react';
+import Link from 'next/link';
 
 const Title = ({ title, date }: { title: string; date: string }) => {
   return (
@@ -84,7 +85,15 @@ const Information = (props: { printRef: any }) => {
         <Text color="whiteAlpha.900">
           M.S. Computer Science @ San Jose State University
         </Text>
-        <Text color="whiteAlpha.900">Research Scientist @ MICoSys Lab</Text>
+        <Text color="whiteAlpha.900">
+          Research Scientist @{' '}
+          <Link
+            style={{ textDecoration: 'underline' }}
+            href="https://www.micosyslab.com/members#h.pgjipec4fuy1"
+          >
+            MICoSys Lab
+          </Link>
+        </Text>
 
         <ReactToPrint
           bodyClass="print-agreement"
@@ -248,10 +257,11 @@ const OnlineResume = () => {
             </Heading>
             <UnorderedList pl="3rem">
               <ListItem>GPA: 3.83 / 4</ListItem>
-              <ListItem>Courses:</ListItem>
-              <UnorderedList>
-                <ListItem>CS XX</ListItem>
-              </UnorderedList>
+              <ListItem textDecoration="underline">
+                <Link href="https://rohanmohapatra.github.io/schedule/">
+                  Coursework
+                </Link>
+              </ListItem>
             </UnorderedList>
           </Stack>
           <Stack spacing="0.5">
