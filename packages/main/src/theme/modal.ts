@@ -4,6 +4,10 @@ import { createMultiStyleConfigHelpers } from '@chakra-ui/styled-system';
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(modalAnatomy.keys);
 
+const sizes = {
+  '3xl': definePartsStyle({ dialog: { width: '80rem', maxWidth: '80rem' } })
+};
+
 const baseStyle = definePartsStyle((props) => ({
   dialog: {
     borderRadius: 'lg',
@@ -18,5 +22,6 @@ const baseStyle = definePartsStyle((props) => ({
 }));
 
 export const Modal = defineMultiStyleConfig({
-  baseStyle
+  baseStyle,
+  sizes
 });

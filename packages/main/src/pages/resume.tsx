@@ -19,6 +19,7 @@ import Head from 'next/head';
 import ReactToPrint from 'react-to-print';
 import { useRef } from 'react';
 import Link from 'next/link';
+import { MastersCoursework } from '@/components/grade-card-modal';
 
 const Title = ({ title, date }: { title: string; date: string }) => {
   return (
@@ -258,9 +259,7 @@ const OnlineResume = () => {
             <UnorderedList pl="3rem">
               <ListItem>GPA: 3.83 / 4</ListItem>
               <ListItem textDecoration="underline">
-                <Link href="https://rohanmohapatra.github.io/schedule/">
-                  Coursework
-                </Link>
+                <MastersCoursework />
               </ListItem>
             </UnorderedList>
           </Stack>
