@@ -33,7 +33,7 @@
     "fix-mismatch-packages": "syncpack fix-mismatches",
     "format-packages": "syncpack format",
     "lint": "lerna run lint",
-    "start": "lerna run start --concurrency=2"
+    "start": "lerna run start --concurrency=4"
   },
   "volta": {
     "node": "18.19.1",

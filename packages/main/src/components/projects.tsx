@@ -18,29 +18,15 @@ import axios from 'axios';
 import { FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 import { PiGithubLogo } from 'react-icons/pi';
 
-import { backendApi, githubApi } from '../lib/constants';
+import { backendApi } from '../lib/constants';
 import { openUrl } from '../lib/utils';
 
 import { Divider } from './shared/divider';
 
 const processProjects = async () => {
-  let response = await axios(`${backendApi}/github-access-token`);
-  const githubToken = response.data.accessToken;
+  const response = await axios(`${backendApi}/github-projects`);
 
-  response = await axios(`${backendApi}/projects`);
-  const requiredProjects = response.data.projects;
-
-  response = await axios.get(githubApi, {
-    headers: {
-      Authorization: `Bearer ${githubToken}`,
-      Accept: 'application/vnd.github+json'
-    }
-  });
-
-  let projectsData: Project[] = response.data;
-  projectsData = projectsData.filter((project) =>
-    requiredProjects.includes(project.name)
-  );
+  const projectsData: Project[] = response.data;
   projectsData.sort((a, b) => b.stargazers_count - a.stargazers_count);
   //   .sort((a, b) => b.forks_count - a.forks_count);
   return projectsData;

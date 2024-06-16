@@ -43,4 +43,9 @@ export const useBackgroundImage = () => {
   return "linear-gradient(to bottom, rgba(255, 255, 255, 0.96) 10%,rgba(255, 255, 255, 1) 80%), url('/images/background.jpg');";
 };
 
+export const useBackgroundColor = () => {
+  const { colorMode } = useChakraColorMode();
+  return colorMode === 'dark' ? 'gray.1000' : 'ehite';
+};
+
 export const theme = extendTheme(overrides, baseTheme);

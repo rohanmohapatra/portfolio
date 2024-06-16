@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { useRouter } from 'next/router';
 
 import { IconBar } from '@portfolio/shared';
-import { useBackgroundImage } from '../theme';
+import { useBackgroundColor, useBackgroundImage } from '../theme';
 
 import { Navbar } from './layout/navbar';
 
@@ -13,11 +13,18 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   const backgroundImage = useBackgroundImage();
+  const backgroundColor = useBackgroundColor();
+
+  const canUseBackgroundColor = true;
+  const backgroundProperties = canUseBackgroundColor
+    ? { backgroundColor }
+    : { backgroundImage };
+
   const router = useRouter();
   const showIconbar = !(router.pathname === '/resume');
   return (
     <Box
-      backgroundImage={backgroundImage}
+      {...backgroundProperties}
       backgroundPosition="center"
       backgroundAttachment="fixed"
       backgroundSize="cover"

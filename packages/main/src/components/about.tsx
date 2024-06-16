@@ -12,8 +12,9 @@ import { Divider } from './shared/divider';
 
 export const About = (props: BoxProps) => {
   return (
-    <Stack h="full" w="full" spacing="3rem" {...props}>
-      <HStack w="45%">
+    <Stack h="full" w="full" spacing="3rem" position="relative" {...props}>
+      {/* <GradientBackground /> */}
+      <HStack w="45%" zIndex="2">
         <Heading variant="code" size="lg">
           01.
         </Heading>
@@ -22,7 +23,7 @@ export const About = (props: BoxProps) => {
         </Heading>
         <Divider orientation="horizontal" />
       </HStack>
-      <HStack spacing="12rem" align="flex-start">
+      <HStack spacing="12rem" align="flex-start" zIndex="2">
         <Stack w="40%">
           <Text fontSize="lg" textAlign="justify">
             I am a passionate software developer with a relentless curiosity for

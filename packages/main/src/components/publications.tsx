@@ -108,7 +108,7 @@ const Publication = ({
     <Stack align="center" spacing="3rem" onClick={() => openUrl(link)}>
       <PDF file={previewUrl} maxWidth={150} />
       <Stack align="center">
-        <Heading size="1.2rem" w="60%" textAlign="center">
+        <Heading size="1.2rem" w="80%" textAlign="center">
           {title}
         </Heading>
         <Heading variant="code" w="50%" size="xs" textAlign="center">
@@ -132,7 +132,7 @@ export const Publications = (props: BoxProps) => {
           Publications
         </Heading>
       </HStack>
-      <Stack align="center" w="full" spacing="6rem">
+      <Stack align="center" w="full" spacing="4rem">
         <Select
           size="lg"
           w="10rem"
@@ -155,7 +155,7 @@ export const Publications = (props: BoxProps) => {
         </Select>
 
         <Grid
-          templateColumns="repeat(3, 1fr)"
+          templateColumns={['repeat(3, 1fr)', 'repeat(5, 1fr)']}
           gap={3}
           w="full"
           justifyContent="center"
