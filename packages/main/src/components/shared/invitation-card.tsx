@@ -20,8 +20,7 @@ type InvitationCardProps = {
 };
 
 export const InvitationCard = (props: InvitationCardProps) => {
-  const { inviteUrl, inviter, inviterProfileUrl, inviterAvatar, repoName } =
-    props;
+  const { inviter, inviterProfileUrl, inviterAvatar, repoName } = props;
   return (
     <Stack
       p="1.5rem"
