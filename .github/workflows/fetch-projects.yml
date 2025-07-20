@@ -1,0 +1,49 @@
+# .github/workflows/backup.yml
+
+# Name of the workflow
+name: Fetch Project List
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # A single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code in the current repository
+      # This is necessary to have a workspace to save the generated file into.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub CLI
+        uses: actions4gh/setup-gh@v1.0.1
+        with:
+          token: ${{secrets.PAT_TOKEN}}
+
+      # Step 2: Create a directory to store the output file
+      # The -p flag ensures that the command doesn't fail if the directory already exists.
+      - name: Create data directory
+        run: mkdir -p src/data
+
+      # Step 3: Generate project list as JSON
+      # This step uses the GitHub CLI to fetch your repository information.
+      - name: Generate project list as JSON
+        # The GITHUB_TOKEN environment variable is set to the value of the GH_PAT secret.
+        # The GitHub CLI will automatically use this token for authentication.
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          # Fetch a list of public repositories for the authenticated user (@me).
+          # We select specific fields relevant for a portfolio and output to a JSON file.
+          # To include private or all repositories, change `--visibility public` to `--visibility private` or remove the flag.
+          gh repo list rohanmohapatra --limit 1000 --json "id,name,description,url,stargazerCount,forkCount,primaryLanguage,pushedAt" > src/data/projects.json
+
+      # Step 4: Verify JSON file content
+      # This is a useful step for debugging to see the output in the action's logs.
+      - name: Show content of projects.json
+        run: cat src/data/projects.json

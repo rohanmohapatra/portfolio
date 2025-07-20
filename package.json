@@ -1,45 +1,49 @@
 {
-  "name": "portfolio",
-  "version": "0.0.1",
-  "dependencies": {
-    "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.0",
-    "framer-motion": "^11.0.14",
-    "lerna": "^8.1.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "serve": "^14.2.1"
-  },
-  "devDependencies": {
-    "@next/eslint-plugin-next": "^14.1.4",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.2.5",
-    "syncpack": "^12.3.0",
-    "typescript": "5.3.3"
-  },
+  "name": "v4",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "lerna run build --scope=@portfolio/shared && lerna run build --scope=@portfolio/main && lerna run build --scope=@portfolio/blog",
-    "dev:api": "lerna run dev --scope=@portfolio/api",
-    "dev:blog": "lerna run dev --scope=@portfolio/blog",
-    "dev:main": "lerna run dev --scope=@portfolio/main",
-    "dev:shared": "lerna run dev --scope=@portfolio/shared",
-    "fix-mismatch-packages": "syncpack fix-mismatches",
-    "format-packages": "syncpack format",
-    "lint": "lerna run lint",
-    "start": "lerna run start --concurrency=4"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^3.21.0",
+    "@emotion/react": "^11.14.0",
+    "@phosphor-icons/react": "^2.1.8",
+    "axios": "^1.9.0",
+    "motion": "^12.23.6",
+    "next": "15.3.1",
+    "next-themes": "^0.4.6",
+    "nextra": "^4.2.17",
+    "nextra-theme-docs": "^4.2.17",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-pdf": "^7.7.1",
+    "react-responsive-masonry": "^2.7.1",
+    "react-slick": "^0.30.2",
+    "react-to-print": "^3.1.1",
+    "slick-carousel": "^1.8.1",
+    "typewriter-effect": "^2.22.0"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.3.1",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.31.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-responsive-masonry": "^2.6.0",
+    "@types/react-slick": "^0.23.13",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "typescript": "^5"
   },
   "volta": {
-    "node": "18.19.1",
-    "yarn": "4.1.1"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+    "node": "22.15.1",
+    "yarn": "4.9.1"
+  }
 }
