@@ -2,7 +2,7 @@ name: Deploy to Github Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
 
 permissions:
   contents: read
@@ -19,11 +19,7 @@ jobs:
         run: yarn
       - name: Run Lint
         run: yarn lint
-      - name: Initialize Secrets File
-        run: |
-          rm packages/main/.env
-          echo "${{ secrets.ENV_FILE }}" > packages/main/.env
-      - name: Build portfolio
+      - name: Build Application
         run: yarn build
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -31,7 +27,7 @@ jobs:
           name: github-pages
           path: build/
           if-no-files-found: error
-  
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -44,7 +40,7 @@ jobs:
           repository: rohanmohapatra/rohanmohapatra.github.io
           ref: master
           path: deploy
-          token:  ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
       - name: Change cwd and clean up repository
         working-directory: ./deploy
         run: |
