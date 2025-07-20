@@ -17,6 +17,8 @@ jobs:
       - uses: volta-cli/action@v4
       - name: Install Packages
         run: yarn
+      - name: Run Typegen
+        run: npx @chakra-ui/cli typegen ./src/lib/theme.ts
       - name: Run Lint
         run: yarn lint
       - name: Build Application
