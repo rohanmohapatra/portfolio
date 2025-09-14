@@ -9,6 +9,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import React from 'react';
 import { FaRocket, FaUserAstronaut, FaFile } from 'react-icons/fa';
 import ScrollIntoView from 'react-scroll-into-view';
@@ -65,7 +66,10 @@ export const Intro: React.FC<BoxProps> = (props) => {
           </ScrollIntoView>
         </HStack>
       </Stack>
-      <Image src="/images/profile.svg" h={{ base: '20rem', md: '30rem' }} />
+      <Image
+        src={useBaseUrl('/images/profile.svg')}
+        h={{ base: '20rem', md: '30rem' }}
+      />
     </Stack>
   );
 };

@@ -1,11 +1,10 @@
-import {
-  Box, Heading, Stack, useColorModeValue,
-} from '@chakra-ui/react';
+import { Box, Heading, Stack, useColorModeValue } from '@chakra-ui/react';
 import Layout from '@theme/Layout';
 import React from 'react';
 import Iframe from 'react-iframe';
 
 import { useBackgroundImage } from '../components/Theme';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function Resume() {
   const backgroundImage = useBackgroundImage();
@@ -30,7 +29,7 @@ function Resume() {
           Rohan Mohapatra - Résumé
         </Heading>
         <Iframe
-          url="/pdfs/RohanMohapatra_Resume.pdf"
+          url={useBaseUrl('/pdfs/RohanMohapatra_Resume.pdf')}
           width="800px"
           height="1100px"
         />

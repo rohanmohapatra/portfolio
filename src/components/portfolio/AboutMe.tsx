@@ -16,13 +16,16 @@ import React from 'react';
 import { FaDownload } from 'react-icons/fa';
 
 import { openUrl } from '../../utils/helpers';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export const AboutMe: React.FC<BoxProps> = (props) => {
   const text = useColorModeValue('gray.800', 'gray.100');
   const image = useColorModeValue(
-    '/images/about-me.svg',
-    '/images/about-me-dark.svg'
+    useBaseUrl('/images/about-me.svg'),
+    useBaseUrl('/images/about-me-dark.svg')
   );
+
+  const resumeUrl = useBaseUrl('/resume');
   return (
     <Stack
       justify="center"
@@ -64,7 +67,7 @@ export const AboutMe: React.FC<BoxProps> = (props) => {
             bg="red.500"
             mt={{ base: '', md: '4rem !important' }}
             rightIcon={<Icon as={FaDownload} />}
-            onClick={() => openUrl('/resume')}
+            onClick={() => openUrl(resumeUrl)}
           >
             View Résumé
           </Button>

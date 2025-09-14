@@ -6,7 +6,7 @@ module.exports = {
   title: 'Eat. Sleep. Code. Repeat',
   tagline: 'Software Developer',
   url: 'https://rohanmohapatra.github.com',
-  baseUrl: '/',
+  baseUrl: '/versions/v2',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
