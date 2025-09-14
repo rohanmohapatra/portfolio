@@ -50,7 +50,7 @@ echo "=> Rewriting paths in $SOURCE_HTML..."
 # \1 = The opening quote (' or ")
 # \2 = The matched filename
 # \3 = The closing quote
-sed -E "s@([\"'])(service-worker\.js|blog\.json|index\.css)([\"'])@\1/$VERSION_NAME/\2\3@g" "$SOURCE_HTML" > "$TARGET_DIR/index.html"
+sed -E "s@([\"'])(service-worker\.js|blog\.json|index\.css)([\"'])@\1/versions/$VERSION_NAME/\2\3@g" "$SOURCE_HTML" > "$TARGET_DIR/index.html"
 
 
 # 6. Copy all other root asset files to the target directory
