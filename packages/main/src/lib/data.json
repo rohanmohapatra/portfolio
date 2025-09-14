@@ -1,0 +1,152 @@
+[
+  {
+    "id": 586688999,
+    "name": "aatmatrisha18",
+    "language": "HTML",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "html_url": "https://github.com/rohanmohapatra/aatmatrisha18",
+    "has_pages": true,
+    "description": "Aatmatrisha 18 Events Website"
+  },
+  {
+    "id": 437479879,
+    "name": "adaswarm",
+    "language": "Python",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "html_url": "https://github.com/rohanmohapatra/adaswarm",
+    "has_pages": false,
+    "description": null
+  },
+  {
+    "id": 220646586,
+    "name": "docassist.io",
+    "language": "JavaScript",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "html_url": "https://github.com/rohanmohapatra/docassist.io",
+    "has_pages": false,
+    "description": null
+  },
+  {
+    "id": 608990698,
+    "name": "dockerized-databases",
+    "language": "Shell",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "html_url": "https://github.com/rohanmohapatra/dockerized-databases",
+    "has_pages": false,
+    "description": "A collection of dockerized databases, spin them up with a single command"
+  },
+  {
+    "id": 643358416,
+    "name": "flexi-events",
+    "language": "JavaScript",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "html_url": "https://github.com/rohanmohapatra/flexi-events",
+    "has_pages": false,
+    "description": "An opensource virtual events platform powered by Cassandra"
+  },
+  {
+    "id": 575586103,
+    "name": "hadoop-hive-docker",
+    "language": "Shell",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "html_url": "https://github.com/rohanmohapatra/hadoop-hive-docker",
+    "has_pages": false,
+    "description": "Setup Hadoop with 5 datanodes and Hive on Local with Docker in less than 5 minutes."
+  },
+  {
+    "id": 192655327,
+    "name": "hdbscan-cpp",
+    "language": "C++",
+    "stargazers_count": 72,
+    "forks_count": 18,
+    "html_url": "https://github.com/rohanmohapatra/hdbscan-cpp",
+    "has_pages": false,
+    "description": "Fast and Efficient Implementation of HDBSCAN in C++ using STL"
+  },
+  {
+    "id": 640701570,
+    "name": "kafka-table",
+    "language": "Java",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "html_url": "https://github.com/rohanmohapatra/kafka-table",
+    "has_pages": false,
+    "description": "A distributed incremental hash table built on Kafka"
+  },
+  {
+    "id": 731474499,
+    "name": "motorsports-app",
+    "language": "TypeScript",
+    "stargazers_count": 5,
+    "forks_count": 0,
+    "html_url": "https://github.com/rohanmohapatra/motorsports-app",
+    "has_pages": true,
+    "description": "Your go-to mobile app for exploring specifications of Formula 1, Formula E, GT3 Racing, LMH, and LMDh class cars 🏁✨"
+  },
+  {
+    "id": 389120187,
+    "name": "scale-invariant-cnn",
+    "language": "Python",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "html_url": "https://github.com/rohanmohapatra/scale-invariant-cnn",
+    "has_pages": false,
+    "description": "Scale Invariant CNN implementation using Keras and Tensorflow"
+  },
+  {
+    "id": 198082716,
+    "name": "selfieless-acts-microservice",
+    "language": "Python",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "html_url": "https://github.com/rohanmohapatra/selfieless-acts-microservice",
+    "has_pages": false,
+    "description": null
+  },
+  {
+    "id": 215990093,
+    "name": "simple-pascal-compiler",
+    "language": "C",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "html_url": "https://github.com/rohanmohapatra/simple-pascal-compiler",
+    "has_pages": false,
+    "description": "Pascal Compiler written using Yacc and Lex"
+  },
+  {
+    "id": 232587691,
+    "name": "souloride",
+    "language": "HTML",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "html_url": "https://github.com/rohanmohapatra/souloride",
+    "has_pages": true,
+    "description": "Souloride Website for Bike Rentals"
+  },
+  {
+    "id": 233683413,
+    "name": "springfield-inforetrieve",
+    "language": "Java",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "html_url": "https://github.com/rohanmohapatra/springfield-inforetrieve",
+    "has_pages": false,
+    "description": "A rule-based data capture system."
+  },
+  {
+    "id": 272438790,
+    "name": "torchswarm",
+    "language": "Python",
+    "stargazers_count": 28,
+    "forks_count": 6,
+    "html_url": "https://github.com/rohanmohapatra/torchswarm",
+    "has_pages": false,
+    "description": "A fast implementation of Particle Swarm Optimization using PyTorch in GPU"
+  }
+]

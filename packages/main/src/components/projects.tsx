@@ -14,17 +14,16 @@ import {
 import { useEffect, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
 import { FaCode, FaCodeBranch, FaStar } from 'react-icons/fa6';
-import axios from 'axios';
 import { FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 import { PiGithubLogo } from 'react-icons/pi';
 
-import { backendApi } from '../lib/constants';
 import { openUrl } from '../lib/utils';
-
+import { getProjects } from '../lib/fake-api';
 import { Divider } from './shared/divider';
+import { useBasePath } from './hooks/useBasePath';
 
 const processProjects = async () => {
-  const response = await axios(`${backendApi}/github-projects`);
+  const response = await getProjects();
 
   const projectsData: Project[] = response.data;
   projectsData.sort((a, b) => b.stargazers_count - a.stargazers_count);
@@ -59,7 +58,7 @@ const Project = ({
         width="24rem"
         rounded="md"
         mb="-2rem"
-        src={`/projects/${name}.png`}
+        src={useBasePath().getResolvedPath(`/projects/${name}.png`)}
         boxShadow="0px 1px 14px 1px #FF4F5B"
         cursor="pointer"
         _hover={{ boxShadow: '0px 1px 24px 1px #FF4F5B' }}
