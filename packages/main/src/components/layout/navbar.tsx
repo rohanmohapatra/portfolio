@@ -10,9 +10,11 @@ import { useRouter } from 'next/router';
 import { ColorModeSwitch } from '@portfolio/shared';
 
 import { openUrl, openUrlInSameTab } from '../../lib/utils';
+import { useBasePath } from '../hooks/useBasePath';
 
 export const Navbar = () => {
   const router = useRouter();
+  const { getResolvedPath } = useBasePath();
 
   const navigate = async (item: (typeof items)[0]) => {
     // Push Router on demand
@@ -71,7 +73,10 @@ export const Navbar = () => {
               {item.name}
             </Button>
           ))}
-          <Button variant="nav" onClick={() => openUrlInSameTab('/blog')}>
+          <Button
+            variant="nav"
+            onClick={() => openUrlInSameTab(getResolvedPath('/blog'))}
+          >
             Blog
           </Button>
         </HStack>
