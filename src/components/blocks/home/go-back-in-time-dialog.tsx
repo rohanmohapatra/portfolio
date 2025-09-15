@@ -57,9 +57,9 @@ export const GoBackInTimeDialog = () => {
 
   const options = ['v1', 'v2', 'v3'];
   const versionMap: { [key: string]: string } = {
-    v1: 'https://v1-rohanmohapatra-portfolio.vercel.app/',
-    v2: 'https://v2-rohanmohapatra-portfolio.vercel.app/',
-    v3: 'https://v3-rohanmohapatra-portfolio.vercel.app/'
+    v1: 'https://rohanmohapatra.github.io/versions/v1',
+    v2: 'https://rohanmohapatra.github.io/versions/v2',
+    v3: 'https://rohanmohapatra.github.io/versions/v3'
   };
 
   return (

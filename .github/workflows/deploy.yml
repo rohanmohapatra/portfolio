@@ -40,6 +40,12 @@ jobs:
     environment:
       name: github-pages
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ./build_artifact
+
       - name: Checkout Deployment Repository
         uses: actions/checkout@v4
         with:
@@ -47,19 +53,21 @@ jobs:
           ref: master
           path: deploy
           token: ${{ secrets.PAT_TOKEN }}
-      - name: Change cwd and clean up repository
+
+      - name: Sync files and commit
         working-directory: ./deploy
         run: |
-          git rm -rf .
-      - uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-          path: ./deploy
-      - working-directory: ./deploy
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
+          rsync -av --delete --exclude 'versions' --exclude '.git' ../build_artifact/ .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit. Website is up to date."
+            exit 0
+          fi
           git add --all
           git commit -m "Deploy website - based on ${{ github.sha }}"
-          git push --force origin HEAD
-          echo "new_page_url=https://rohanmohapatra.github.io/" >> $GITHUB_OUTPUT
+          git push origin HEAD
+
+      - name: Set deployment URL output
+        id: deployment
+        run: echo "new_page_url=https://rohanmohapatra.github.io/" >> $GITHUB_OUTPUT

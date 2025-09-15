@@ -3,10 +3,7 @@ import { useState } from 'react';
 import { pdfjs, Document, Thumbnail } from 'react-pdf';
 import { useColorModeValue } from '@/components/ui/color-mode';
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.js',
-  import.meta.url
-).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.js', import.meta.url).toString();
 
 type PDFFile = string | File | null;
 const options = {
@@ -18,7 +15,7 @@ const options = {
 const PDF = ({ file, maxWidth }: { file: PDFFile; maxWidth: number }) => {
   const [dimensions, setDimensions] = useState({ width: maxWidth, height: 0 });
   return (
-    <Flex height={dimensions.height} ml={dimensions.width / 2}>
+    <Flex height={dimensions.height} ml={dimensions.width / 4}>
       <Document file={file} options={options}>
         <Box position="absolute">
           <Box
@@ -52,9 +49,7 @@ const PDF = ({ file, maxWidth }: { file: PDFFile; maxWidth: number }) => {
             <Thumbnail
               pageIndex={0}
               width={maxWidth}
-              onLoadSuccess={(page) =>
-                setDimensions({ width: page.width, height: page.height })
-              }
+              onLoadSuccess={(page) => setDimensions({ width: page.width, height: page.height })}
             />
           </Box>
         </Box>

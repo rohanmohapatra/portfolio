@@ -4,7 +4,7 @@ import { Stack, Heading } from '@chakra-ui/react';
 
 export const Footer = () => {
   return (
-    <Stack w="full" align="center" pb={['5rem', '2rem']} pr={['0rem', '10rem']}>
+    <Stack w="full" align="center" pb={{ base: '10rem', md: '2rem' }} position="fixed" bottom="0">
       <Heading code size="sm">
         Designed & Built by Rohan Mohapatra
       </Heading>
