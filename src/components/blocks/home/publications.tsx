@@ -86,8 +86,8 @@ const publications: PublicationProps[] = [
 
 const Publication = ({ previewUrl, title, publicationName, link }: PublicationProps) => {
   return (
-    <Stack gap="3rem" onClick={() => openUrl(link)}>
-      <PDF file={previewUrl} maxWidth={150} />
+    <Stack gap="1rem" onClick={() => openUrl(link)}>
+      <PDF file={previewUrl} maxWidth={120} />
       <Stack align="center">
         <Heading size="sm" w="80%" textAlign="center">
           {title}
@@ -104,7 +104,7 @@ export const Publications = (props: StackProps) => {
   const [filter, setFilter] = useState('all');
 
   return (
-    <Stack h="full" w="full" gap="3rem" {...props}>
+    <Stack h="full" w="full" gap="1rem" {...props}>
       <HStack w={['full', '45%']} alignSelf="flex-end" pr={['0rem', '10rem']}>
         <Divider orientation="horizontal" />
         <Heading code size="3xl">
@@ -114,7 +114,7 @@ export const Publications = (props: StackProps) => {
           Publications
         </Heading>
       </HStack>
-      <Stack align="flex-start" w="full" gap="4rem">
+      <Stack align="flex-start" w="full" gap="2rem">
         <Stack w="20rem">
           <Heading size="sm">Filter by year</Heading>
           <NativeSelect.Root size="sm">
@@ -135,11 +135,12 @@ export const Publications = (props: StackProps) => {
         </Stack>
 
         <Grid
-          templateColumns={['repeat(3, 1fr)', 'repeat(5, 1fr)']}
+          templateColumns={['repeat(3, 1fr)', 'repeat(4, 1fr)']}
           gap={3}
           w="full"
           justifyContent="center"
           alignItems="center"
+          pr="10rem"
         >
           {publications
             .filter((publication) => (filter === 'all' ? publication : publication.year === filter))

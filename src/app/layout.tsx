@@ -6,6 +6,7 @@ import { Provider } from '@/components/ui/provider';
 import { fonts } from '@/lib/fonts';
 import 'nextra-theme-docs/style.css';
 import './globals.css';
+import { Footer } from '@/components/layout/footer';
 const RootLayout = ({
   children
 }: Readonly<{
@@ -23,6 +24,7 @@ const RootLayout = ({
           <IconBar position="fixed" top="40%" left="1%" />
           <Navbar />
           {children}
+          <Footer />
         </Provider>
       </body>
     </html>

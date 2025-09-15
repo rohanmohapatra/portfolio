@@ -25,6 +25,7 @@ const ProjectCard = ({
   return (
     <Stack
       {...rest}
+      position="relative"
       p="1rem"
       rounded="md"
       boxShadow="md"
@@ -34,6 +35,27 @@ const ProjectCard = ({
       justify="space-between"
       border="1px solid"
       borderColor="red.500"
+      isolation="isolate"
+      overflow="hidden"
+      _hover={{
+        _before: {
+          opacity: 1,
+          backgroundImage:
+            'radial-gradient(at 35% 98%, var(--chakra-colors-red-600) 0px, transparent 50%),radial-gradient(at 10% 84%, var(--chakra-colors-red-300) 0px, transparent 50%),radial-gradient(at 91% 91%, var(--chakra-colors-red-400) 0px, transparent 50%),radial-gradient(at 58% 100%, var(--chakra-colors-red-500) 0px, transparent 50%)'
+        }
+      }}
+      _before={{
+        content: '""',
+        position: 'absolute',
+        top: 30,
+        left: -10,
+        rotate: '-10deg',
+        width: '140%',
+        height: '100%',
+        opacity: 0,
+        transition: 'opacity 0.3s ease-in-out',
+        zIndex: -1
+      }}
     >
       {/* <Image
         height="12rem"
