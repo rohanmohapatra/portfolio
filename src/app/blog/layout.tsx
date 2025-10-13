@@ -2,7 +2,6 @@ import { Box } from '@chakra-ui/react';
 import { Layout } from 'nextra-theme-docs';
 import { getPageMap } from 'nextra/page-map';
 import { navBarHeight } from '@/lib/size';
-import { Footer } from '@/components/layout/footer';
 
 const RootLayout = async ({
   children
@@ -16,7 +15,7 @@ const RootLayout = async ({
           pageMap={await getPageMap()}
           sidebar={{ toggleButton: false }}
           darkMode={false}
-          footer={<Footer />}
+          footer={null}
           editLink={null}
           feedback={{ content: null }}
           // ... Your additional layout options

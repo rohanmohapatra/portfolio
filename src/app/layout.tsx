@@ -21,7 +21,7 @@ const RootLayout = ({
     >
       <body suppressHydrationWarning>
         <Provider defaultTheme="dark" enableSystem={false}>
-          <IconBar position="fixed" top="40%" left="1%" />
+          <IconBar position="fixed" top="40%" left="1%" zIndex="10" />
           <Navbar />
           {children}
           <Footer />
