@@ -58,4 +58,21 @@ const PDF = ({ file, maxWidth }: { file: PDFFile; maxWidth: number }) => {
   );
 };
 
-export default PDF;
+const PDFV2 = ({ file, maxWidth }: { file: PDFFile; maxWidth: number }) => {
+  const [dimensions, setDimensions] = useState({ width: maxWidth, height: 0 });
+  return (
+    <Flex height={150} alignItems="flex-start" justifyContent="flex-start" overflow="hidden">
+      <Document file={file} options={options}>
+        <Box rounded="sm">
+          <Thumbnail
+            pageIndex={0}
+            width={dimensions.width}
+            onLoadSuccess={(page) => setDimensions({ width: page.width, height: page.height })}
+          />
+        </Box>
+      </Document>
+    </Flex>
+  );
+};
+
+export default PDFV2;

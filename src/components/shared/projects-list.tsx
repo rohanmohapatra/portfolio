@@ -101,11 +101,21 @@ const ProjectCard = ({
   );
 };
 
+const moreProject: Project = {
+  id: 'more',
+  name: 'More',
+  description: 'Explore the rest of my work on GitHub.',
+  primaryLanguage: { name: 'Text' },
+  stargazerCount: 90,
+  forkCount: 20,
+  url: 'https://github.com/rohanmohapatra?tab=repositories'
+};
+
 export const ProjectsList = ({ projects }: { projects: Project[] }) => {
   return (
     <ResponsiveMasonry columnsCountBreakPoints={{ 300: 2, 500: 3, 700: 4 }}>
       <Masonry gutter="2px">
-        {projects
+        {[...projects, moreProject]
           .map((project, index) => {
             const updatedProject = {
               ...project,

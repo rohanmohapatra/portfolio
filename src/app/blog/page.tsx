@@ -27,7 +27,7 @@ export default async function Page() {
     });
 
   return (
-    <Wrapper toc={[]} metadata={{ title: 'Blog Home', filePath: 'src/app/page.tsx' }}>
+    <Wrapper toc={[]} metadata={{ title: 'Blog Home', filePath: 'src/app/page.tsx' }} sourceCode="">
       <Stack>
         <Stack
           rounded="md"

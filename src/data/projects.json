@@ -2,6 +2,56 @@
   {
     "description": "",
     "forkCount": 0,
+    "id": "MDEwOlJlcG9zaXRvcnkxOTQ2MDQxODI=",
+    "name": "rohanmohapatra.github.io",
+    "primaryLanguage": { "name": "HTML" },
+    "pushedAt": "2025-10-13T02:40:38Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/rohanmohapatra/rohanmohapatra.github.io"
+  },
+  {
+    "description": "Rohan Mohapatra's portfolio",
+    "forkCount": 0,
+    "id": "R_kgDOI_9f6w",
+    "name": "portfolio",
+    "primaryLanguage": { "name": "TypeScript" },
+    "pushedAt": "2025-10-13T02:38:21Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/rohanmohapatra/portfolio"
+  },
+  {
+    "description": "",
+    "forkCount": 0,
+    "id": "R_kgDOGuTkvw",
+    "name": "multiple-linear-regression",
+    "primaryLanguage": { "name": "Python" },
+    "pushedAt": "2025-09-30T07:01:24Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/rohanmohapatra/multiple-linear-regression"
+  },
+  {
+    "description": "A modern CLI and web-based viewer for reStructuredText files.",
+    "forkCount": 0,
+    "id": "R_kgDOP0WbHg",
+    "name": "rst-previewer",
+    "primaryLanguage": { "name": "Python" },
+    "pushedAt": "2025-09-25T05:35:50Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/rohanmohapatra/rst-previewer"
+  },
+  {
+    "description": "",
+    "forkCount": 0,
+    "id": "R_kgDOPyFUGA",
+    "name": "rst-viewer",
+    "primaryLanguage": { "name": "Python" },
+    "pushedAt": "2025-09-18T04:16:37Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/rohanmohapatra/rst-viewer"
+  },
+  {
+    "description": "",
+    "forkCount": 0,
     "id": "R_kgDOO2OWZA",
     "name": "icarus-verilog-guide",
     "primaryLanguage": null,
@@ -48,26 +98,6 @@
     "pushedAt": "2024-09-25T02:53:04Z",
     "stargazerCount": 0,
     "url": "https://github.com/rohanmohapatra/microsemi"
-  },
-  {
-    "description": "",
-    "forkCount": 0,
-    "id": "MDEwOlJlcG9zaXRvcnkxOTQ2MDQxODI=",
-    "name": "rohanmohapatra.github.io",
-    "primaryLanguage": { "name": "HTML" },
-    "pushedAt": "2024-06-16T20:17:03Z",
-    "stargazerCount": 0,
-    "url": "https://github.com/rohanmohapatra/rohanmohapatra.github.io"
-  },
-  {
-    "description": "Rohan Mohapatra's portfolio",
-    "forkCount": 0,
-    "id": "R_kgDOI_9f6w",
-    "name": "portfolio",
-    "primaryLanguage": { "name": "TypeScript" },
-    "pushedAt": "2024-06-16T20:14:39Z",
-    "stargazerCount": 0,
-    "url": "https://github.com/rohanmohapatra/portfolio"
   },
   {
     "description": "This repository contains code for running Recommendations on Steam Dataset",
@@ -411,16 +441,6 @@
   },
   {
     "description": "",
-    "forkCount": 0,
-    "id": "R_kgDOGuTkvw",
-    "name": "multiple-linear-regression",
-    "primaryLanguage": { "name": "Python" },
-    "pushedAt": "2022-01-23T19:38:24Z",
-    "stargazerCount": 0,
-    "url": "https://github.com/rohanmohapatra/multiple-linear-regression"
-  },
-  {
-    "description": "",
     "forkCount": 1,
     "id": "R_kgDOGhNpxw",
     "name": "adaswarm",
@@ -461,12 +481,12 @@
   },
   {
     "description": "A fast implementation of Particle Swarm Optimization using PyTorch in GPU",
-    "forkCount": 6,
+    "forkCount": 7,
     "id": "MDEwOlJlcG9zaXRvcnkyNzI0Mzg3OTA=",
     "name": "torchswarm",
     "primaryLanguage": { "name": "Python" },
     "pushedAt": "2021-05-08T09:02:25Z",
-    "stargazerCount": 28,
+    "stargazerCount": 29,
     "url": "https://github.com/rohanmohapatra/torchswarm"
   },
   {
@@ -506,7 +526,7 @@
     "name": "pytorch-cifar",
     "primaryLanguage": { "name": "Python" },
     "pushedAt": "2020-07-19T08:22:17Z",
-    "stargazerCount": 2,
+    "stargazerCount": 1,
     "url": "https://github.com/rohanmohapatra/pytorch-cifar"
   },
   {
@@ -611,12 +631,12 @@
   },
   {
     "description": "Fast and Efficient Implementation of HDBSCAN in C++ using STL",
-    "forkCount": 18,
+    "forkCount": 19,
     "id": "MDEwOlJlcG9zaXRvcnkxOTI2NTUzMjc=",
     "name": "hdbscan-cpp",
     "primaryLanguage": { "name": "C++" },
     "pushedAt": "2019-07-09T04:45:57Z",
-    "stargazerCount": 68,
+    "stargazerCount": 76,
     "url": "https://github.com/rohanmohapatra/hdbscan-cpp"
   },
   {

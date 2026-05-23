@@ -68,9 +68,9 @@ const Information = (props: { printRef: RefObject<HTMLDivElement | null> }) => {
         <Heading>Rohan Mohapatra</Heading>
         <Text color="whiteAlpha.900">M.S. Computer Science @ San Jose State University</Text>
         <Text color="whiteAlpha.900">
-          Research Scientist @{' '}
-          <Link style={{ textDecoration: 'underline' }} href="https://www.micosyslab.com/members#h.pgjipec4fuy1">
-            MICoSys Lab
+          Founding Engineer @{' '}
+          <Link style={{ textDecoration: 'underline' }} href="https://llmda.ai">
+            llmda.ai
           </Link>
         </Text>
 
@@ -177,13 +177,13 @@ export const OnlineResume = () => {
         </Heading>
         <Separator bg="red.500" w="40rem" opacity="1" height="0.2rem" />
         <Stack gap="0.5">
-          <Title title="M.S. Computer Science" date="August 2022 - Present" />
+          <Title title="M.S. Computer Science" date="August 2022 - May 2024" />
           <Heading size="sm" color={headingColor}>
             San Jose State University | San Jose, California
           </Heading>
           <List.Root pl="3rem">
             <List.Item>GPA: 3.83 / 4</List.Item>
-            <List.Item textDecoration="underline">
+            <List.Item>
               <MastersCoursework />
             </List.Item>
           </List.Root>
@@ -204,7 +204,7 @@ export const OnlineResume = () => {
           </Heading>
           <Separator bg="red.500" w="40rem" opacity="1" height="0.2rem" />
           <Stack gap="0.5">
-            <Title title="Research Scientist " date="September 2022 - Present" />
+            <Title title="Research Scientist " date="September 2022 - May 2024" />
             <Heading size="sm" color={headingColor}>
               MICoSys Lab, San Jose State University | San Jose, CA
             </Heading>
@@ -267,21 +267,6 @@ export const OnlineResume = () => {
           </Heading>
           <Separator bg="red.500" w="40rem" opacity="1" height="0.2rem" />
           <Stack gap="0.5">
-            <Title title="Machine Learning Intern" date="June 2023 - August 2023" />
-            <Heading size="sm" color={headingColor}>
-              Spicyfy Ventures LLC | Irving, TX (Remote)
-            </Heading>
-            <List.Root pl="3rem">
-              <List.Item>
-                Engineered a video sentiment analyzing & generative video composing service using Tensorflow and Deep
-                learning increasing product sales by 45% in Q3 2023.
-              </List.Item>
-              <List.Item>
-                Built a distributed system using Raft and Python to deploy ML services that cut service downtime by 91%.
-              </List.Item>
-            </List.Root>
-          </Stack>
-          <Stack gap="0.5">
             <Title title="Software Engineering Intern" date="January 2020 - July 2020" />
             <Heading size="sm" color={headingColor}>
               LogMeIn, Inc. | Bengaluru, India
@@ -312,9 +297,95 @@ export const OnlineResume = () => {
         </Stack>
 
         <Heading size="lg" textTransform="uppercase" pt="2rem">
-          Projects
+          Publications
         </Heading>
         <Separator bg="red.500" w="40rem" opacity="1" height="0.2rem" />
+        <Stack gap="0.5">
+          <Title
+            title="Adversarial Attacks and Defenses in Multivariate Time-series Forecasting"
+            date="August 2024"
+          />
+          <Heading size="sm" color={headingColor}>
+            Annual Conference of the PHM Society &mdash; 8 Citations
+          </Heading>
+          <List.Root pl="3rem">
+            <List.Item>
+              Developed robust deep learning models using adversarial training and model hardening to counter white-box
+              attacks (FGSM, BIM) in multivariate time-series forecasting.
+            </List.Item>
+            <List.Item>
+              Established defense transferability from benchmark electricity data to real-world HDD failure prediction,
+              reducing RMSE by 72.4% and 94.8% respectively through implemented security protocols.
+            </List.Item>
+          </List.Root>
+        </Stack>
+        <Stack gap="0.5">
+          <Title
+            title="Denoising Self-Attention Transformer Encoders for Li-ion Battery Health Prognostics"
+            date="December 2023"
+          />
+          <Heading size="sm" color={headingColor}>
+            IEEE International Conference on Big Data &mdash; 10 Citations
+          </Heading>
+          <List.Root pl="3rem">
+            <List.Item>
+              Developed a novel deep learning framework utilizing Denoising Auto-encoders and Wavelet denoisers coupled
+              with Self-Attention Transformers to robustly predict Remaining Useful Life (RUL).
+            </List.Item>
+            <List.Item>
+              Validated performance on NASA and CALCE datasets, achieving error metrics on par with or superior to
+              state-of-the-art benchmarks under diverse noise patterns.
+            </List.Item>
+          </List.Root>
+        </Stack>
+        <Stack gap="0.5">
+          <Title title="TFBEST: Dual-Aspect Transformer for Failure Prediction" date="September 2023" />
+          <Heading size="sm" color={headingColor}>
+            Submitted to IEEE Conference on Big Data &mdash; 7 Citations
+          </Heading>
+          <List.Root pl="3rem">
+            <List.Item>
+              Developed a novel attention transformer architecture for predicting hard disk drive failures in
+              datacenters.
+            </List.Item>
+            <List.Item>
+              Conducted experiments on Seagate HDD data; demonstrated 34% increase in accuracy from previous literature
+              models.
+            </List.Item>
+          </List.Root>
+        </Stack>
+        <Stack gap="0.5">
+          <Title title="Large-scale EOL Prediction of HDDs in Distributed Datacenters" date="June 2023" />
+          <Heading size="sm" color={headingColor}>
+            IEEE Conference on Smart Computing (SMARTCOMP) &mdash; 11 Citations
+          </Heading>
+          <List.Root pl="3rem">
+            <List.Item>
+              Advanced the state-of-the-art in HDD failure prediction; offering generalization potential for
+              practitioners working with HDD data from various disk manufacturers.
+            </List.Item>
+            <List.Item>
+              Achieved RMSE of 0.86 through 10-years of Seagate HDD data; provided key insights for data center
+              operations.
+            </List.Item>
+          </List.Root>
+        </Stack>
+        <Stack gap="0.5">
+          <Title
+            title="AdaSwarm: Augmenting Gradient-based Optimizers in Deep Learning with Swarm Intelligence"
+            date="April 2022"
+          />
+          <Heading size="sm" color={headingColor}>
+            IEEE Transactions on Emerging Topics in Computational Intelligence &mdash; 49 Citations
+          </Heading>
+          <List.Root pl="3rem">
+            <List.Item>
+              Developed a novel optimization algorithm; benchmarked on several datasets and compared with
+              state-of-the-art optimizers; achieving 17% higher convergence speed, 30% better accuracy than Adam on
+              ResNet 50 models.
+            </List.Item>
+          </List.Root>
+        </Stack>
         <Heading size="lg" textTransform="uppercase" pt="2rem">
           Awards
         </Heading>

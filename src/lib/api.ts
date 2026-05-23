@@ -20,15 +20,8 @@ export const processProjects = async (): Promise<Project[]> => {
     'hdbscan-cpp',
     'torchswarm',
     'kafka-table',
-    'flexi-events',
+    // 'flexi-events',
     'simple-pascal-compiler',
-    'adaswarm',
-    'docassist.io',
-    // 'hadoop-hive-docker',
-    // 'selfieless-acts-microservice',
-    'scale-invariant-cnn',
-    // 'springfield-inforetrieve',
-    'souloride',
     'aatmatrisha18',
     'dockerized-databases'
   ];
