@@ -2,7 +2,7 @@
 import { Icon, IconButton, Stack, StackProps, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
 
-import { GithubLogoIcon, InstagramLogoIcon, LinkedinLogoIcon, TwitterLogoIcon } from '@phosphor-icons/react';
+import { GithubLogoIcon, InstagramLogoIcon, LinkedinLogoIcon, XLogoIcon } from '@phosphor-icons/react';
 import { openUrl } from '@/lib/utils';
 import { GoogleScholarIcon } from '@/components/icons/google-scholar';
 import { Divider } from '@/components/shared/divider';
@@ -128,15 +128,15 @@ export const IconBar: React.FC<StackProps> = (props) => {
           </Icon>
         </IconButton>
       </Tooltip>
-      <Tooltip showArrow positioning={{ placement: 'right' }} content="Twitter">
+      <Tooltip showArrow positioning={{ placement: 'right' }} content="X">
         <IconButton
-          aria-label="Twitter"
+          aria-label="X"
           variant="ghost"
           color="red.500"
-          onClick={() => openUrl('https://twitter.com/rohannmohapatra')}
+          onClick={() => openUrl('https://x.com/rohannmohapatra')}
         >
           <Icon asChild boxSize="2rem">
-            <TwitterLogoIcon weight="regular" />
+            <XLogoIcon weight="regular" />
           </Icon>
         </IconButton>
       </Tooltip>

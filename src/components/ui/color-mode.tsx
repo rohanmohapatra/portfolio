@@ -12,7 +12,17 @@ type ColorModeButtonProps = Omit<IconButtonProps, 'aria-label'>;
 export type ColorModeProviderProps = ThemeProviderProps;
 
 export function ColorModeProvider(props: ColorModeProviderProps) {
-  return <ThemeProvider attribute="class" disableTransitionOnChange {...props} />;
+  // scriptProps={{ type: 'application/json' }} silences React 19's "script tag
+  // inside React component" warning from next-themes. See
+  // https://github.com/pacocoursey/next-themes/issues/387
+  return (
+    <ThemeProvider
+      attribute="class"
+      disableTransitionOnChange
+      scriptProps={{ type: 'application/json' }}
+      {...props}
+    />
+  );
 }
 
 export type ColorMode = 'light' | 'dark';
