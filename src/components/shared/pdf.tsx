@@ -12,6 +12,7 @@ const options = {
   length: 1
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const PDF = ({ file, maxWidth }: { file: PDFFile; maxWidth: number }) => {
   const [dimensions, setDimensions] = useState({ width: maxWidth, height: 0 });
   return (

@@ -14,6 +14,7 @@ export function Provider(props: ColorModeProviderProps) {
 
   useEffect(() => {
     // this forces a rerender
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHydrated(true);
   }, []);
 
